@@ -683,30 +683,6 @@
       </div>
     </div>
 
-    <!-- 19. FLOATING PIXEL TESTER TOOLBAR (DEBUG TOOLBAR GÓC TRÁI DƯỚI) -->
-    <div id="pixel-tester-widget" class="fixed bottom-20 left-3 z-50 select-none">
-      <div id="pixel-tester-panel" class="hidden bg-stone-900/95 text-white p-3 rounded-2xl shadow-2xl border border-rose-500/40 backdrop-blur-md max-w-[260px] animate-popSlideUp space-y-2">
-        <div class="flex items-center justify-between border-b border-stone-800 pb-1.5">
-          <span class="text-[11px] font-bold text-amber-400 flex items-center gap-1">
-            <i class="ph-fill ph-cpu text-rose-500"></i> Pixel Test Tool
-          </span>
-          <button type="button" onclick="togglePixelTester()" class="text-stone-400 hover:text-white text-xs p-0.5">✕</button>
-        </div>
-        <p class="text-[10px] text-stone-300 leading-snug">
-          Kích hoạt ngay sự kiện <b>Purchase</b> lên Meta Pixel (ID: 1511253034166691) để đạt 100% thiết lập.
-        </p>
-        <button type="button" onclick="triggerManualPurchaseTest()" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-1.5 active:scale-95 transition-all">
-          <i class="ph-bold ph-lightning"></i>
-          <span>⚡ Bắn Test Sự Kiện Purchase</span>
-        </button>
-      </div>
-      <!-- Pill button toggle -->
-      <button type="button" id="pixel-tester-toggle-btn" onclick="togglePixelTester()" title="Công cụ kiểm tra Meta Pixel" class="mt-1 px-2.5 py-1.5 rounded-full bg-stone-900/90 hover:bg-stone-900 text-amber-300 border border-amber-400/30 text-[10px] font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm active:scale-95 transition-transform">
-        <i class="ph-fill ph-sparkle text-rose-500"></i>
-        <span>⚡ Test Pixel Purchase</span>
-      </button>
-    </div>
-
   </div><!-- /Mobile Frame -->
 
   <!-- Load Dữ liệu đánh giá từ file reviews-data.js -->
@@ -1181,7 +1157,8 @@
     // Render Reviews 5 sao thật từ TikTok Shop
     function renderReviews() {
       const container = document.getElementById('reviews-container');
-      const reviewsList = (typeof REVIEWS_DATA !== 'undefined' && REVIEWS_DATA) ? REVIEWS_DATA : [];
+      const rawList = (typeof REVIEWS_DATA !== 'undefined' && REVIEWS_DATA) ? REVIEWS_DATA : [];
+      const reviewsList = rawList.filter(r => !r.san_pham || r.san_pham === 'hat-sen');
       container.innerHTML = '';
 
       reviewsList.forEach(rev => {
