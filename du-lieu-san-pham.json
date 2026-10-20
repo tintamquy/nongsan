@@ -1,0 +1,147 @@
+{
+  "order_submit": {
+    "fields": {
+      "dia_chi": "entry.1275212180",
+      "ghi_chu": "entry.1562310325",
+      "goi_dat_mua": "entry.148933295",
+      "ho_ten": "entry.1663547434",
+      "san_pham": "entry.2132536733",
+      "so_dien_thoai": "entry.1923907202",
+      "tong_tien": "entry.658159699"
+    },
+    "form_url": "https://docs.google.com/forms/d/e/1FAIpQLScp8i2UlZmZIVekpKAk4QldrQNtMuim7O7LH2-_5yyzycDiBA/viewform",
+    "method": "POST Google Form",
+    "note_tag": "Ghi chú đơn gắn [QC: utm_source/utm_medium/utm_campaign] từ URL",
+    "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScp8i2UlZmZIVekpKAk4QldrQNtMuim7O7LH2-_5yyzycDiBA/formResponse"
+  },
+  "pixel_events": {
+    "AddToCart": "khi chọn gói — {content_name: tên gói, value: giá gói, currency: 'VND'}",
+    "InitiateCheckout": "khi chạm vào form hoặc bấm Mua Ngay",
+    "PageView": "khi tải trang",
+    "Purchase": "khi gửi đơn thành công — {content_name: gói đã chọn, value: tổng tiền, currency: 'VND'}"
+  },
+  "policies": [
+    "100% tự nhiên, không chất bảo quản",
+    "Kiểm tra hàng trước khi thanh toán (đồng kiểm khi nhận hàng)",
+    "Đổi trả nếu hàng lỗi do shop/vận chuyển",
+    "Phí ship: shop báo chính xác khi gọi xác nhận đơn (đơn chưa đủ freeship)",
+    "Không cam kết công dụng chữa bệnh; không sử dụng đánh giá khách hàng bịa đặt"
+  ],
+  "products": [
+    {
+      "description": "Hạt bí nếp rang mộc (rang chay), không tẩm ướp gia vị, không chất bảo quản. Hạt mẩy, bùi béo tự nhiên, ăn vặt lành mạnh cho cả nhà, hợp biếu tặng.",
+      "extra_images": [],
+      "freeship_from_kg": 3,
+      "id": "hat-bi-nep",
+      "images": [],
+      "images_note": "CHƯA CÓ ảnh thật do shop cung cấp — cần shop bổ sung ảnh thật hạt bí trước khi chạy quảng cáo.",
+      "name": "Hạt Bí Nếp Rang Mộc",
+      "packages": [
+        {
+          "compare_at": null,
+          "freeship": false,
+          "id": "bi-500g",
+          "label": "Gói 500g",
+          "note": "Dùng thử",
+          "price": 65000,
+          "weight_kg": 0.5
+        },
+        {
+          "compare_at": 139000,
+          "freeship": false,
+          "id": "bi-1kg",
+          "label": "Gói 1kg",
+          "note": "",
+          "price": 119000,
+          "weight_kg": 1
+        },
+        {
+          "compare_at": 238000,
+          "freeship": false,
+          "id": "bi-2kg",
+          "label": "Combo 2kg",
+          "note": "Tiết kiệm 2.000đ",
+          "price": 236000,
+          "weight_kg": 2
+        },
+        {
+          "compare_at": 357000,
+          "freeship": true,
+          "id": "bi-3kg",
+          "label": "Combo 3kg",
+          "note": "Tiết kiệm 2.000đ + FREESHIP",
+          "price": 355000,
+          "weight_kg": 3
+        }
+      ]
+    },
+    {
+      "description": "Hạt sen khô nguyên chất, sấy khô tự nhiên, không chất bảo quản. Hạn sử dụng 12 tháng. Xuất xứ Việt Nam. Nấu chè, hầm canh, cháo, biếu tặng.",
+      "extra_images": [],
+      "freeship_from_kg": 3,
+      "id": "hat-sen-kho",
+      "images": [
+        "images/hat-sen-that-1.png",
+        "images/hat-sen-that-2.png"
+      ],
+      "images_note": "Ảnh thật do shop cung cấp (gói Hạt Sen Nguyên Chất 'Gieo Lành Gặt Phước').",
+      "name": "Hạt Sen Khô Nguyên Chất",
+      "packages": [
+        {
+          "compare_at": 115000,
+          "freeship": false,
+          "id": "sen-500g",
+          "label": "Gói 500g",
+          "note": "Dùng thử",
+          "price": 74500,
+          "weight_kg": 0.5
+        },
+        {
+          "compare_at": 230000,
+          "freeship": false,
+          "id": "sen-1kg",
+          "label": "Gói 1kg",
+          "note": "",
+          "price": 149000,
+          "weight_kg": 1
+        },
+        {
+          "compare_at": 298000,
+          "freeship": false,
+          "id": "sen-2kg",
+          "label": "Combo 2kg",
+          "note": "Tiết kiệm 10.000đ",
+          "price": 288000,
+          "weight_kg": 2
+        },
+        {
+          "compare_at": 447000,
+          "freeship": true,
+          "id": "sen-3kg",
+          "label": "Combo 3kg",
+          "note": "Tiết kiệm 15.000đ + FREESHIP",
+          "price": 432000,
+          "weight_kg": 3
+        },
+        {
+          "compare_at": 745000,
+          "freeship": true,
+          "id": "sen-5kg",
+          "label": "Combo 5kg",
+          "note": "Tiết kiệm 50.000đ + FREESHIP",
+          "price": 695000,
+          "weight_kg": 5
+        }
+      ],
+      "price_note": "GIÁ MỚI từ 20/10/2026: 149.000đ/kg (trước đây 195.000đ/kg). FREESHIP từ 3kg. Combo: 2kg tiết kiệm 10k, 3kg tiết kiệm 15k, 5kg tiết kiệm 50k so với mua lẻ."
+    }
+  ],
+  "shop": {
+    "address": "Thôn Đồng Thịnh, Xã Sông Lô, Phú Thọ",
+    "delivery_zone": "Chỉ giao TP.HCM và các tỉnh từ Huế trở vào Nam (không giao phía Bắc)",
+    "hotline_zalo": "0968806602",
+    "meta_pixel_id": "1511253034166691",
+    "name": "Nông Sản Mộc — Hạt Bí Nếp & Đồ Khô Tự Nhiên",
+    "payment": "COD - thanh toán khi nhận hàng, kiểm tra hàng trước khi thanh toán"
+  }
+}
