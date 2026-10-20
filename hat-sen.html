@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
-  <!-- Meta Pixel Code (Đặt ngay trên đầu <head>) -->
+  <!-- Meta Pixel Code (Đặt chuẩn ngay trên đầu <head>) -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -98,7 +98,7 @@
       box-shadow: 0 4px 25px rgba(254, 44, 85, 0.42);
     }
     .modal-backdrop {
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.72);
       backdrop-filter: blur(4px);
     }
   </style>
@@ -107,7 +107,7 @@
 <body class="bg-[#ECECED] text-[#1D1D1F] min-h-screen font-sans selection:bg-[#FE2C55]/20 selection:text-[#FE2C55]">
 
   <!-- Mobile Viewport Wrapper (TikTok Shop Mobile Frame) -->
-  <div class="max-w-md mx-auto min-h-screen bg-white shadow-2xl relative pb-28 flex flex-col">
+  <div class="max-w-md mx-auto min-h-screen bg-white shadow-2xl relative pb-28 flex flex-col" id="main-app-container">
 
     <!-- 1. TOP MARQUEE BANNER (TikTok Red Gradient) -->
     <header class="bg-gradient-to-r from-[#FE2C55] via-[#FF0050] to-[#FF4500] text-white py-2 overflow-hidden shadow-sm sticky top-0 z-30">
@@ -116,7 +116,7 @@
           ⚡ FLASH SALE HÔM NAY: FREESHIP cho đơn từ 3kg — Giao TP.HCM &amp; các tỉnh từ Huế trở vào Nam — Kiểm tra hàng trước khi thanh toán ⚡
         </span>
         <span class="inline-flex items-center px-4">
-          ⚡ FLASH SALE HÔM NAY: FREESHIP cho đơn từ 3kg — Giao TP.HCM &amp; các tỉnh từ Huế trở vào Nam — Kiểm tra hàng trước khi thanh toán ⚡
+          ⚡ FLASH SALE HÔM NAY: FREESHIP cho đơn từ 3kg — Giao TP.HCM &amp; từ Huế vào Nam — Kiểm tra hàng trước khi thanh toán ⚡
         </span>
       </div>
     </header>
@@ -159,24 +159,11 @@
       </div>
     </nav>
 
-    <!-- 4. MEDIA GALLERY CAROUSEL (HẠT SEN KHÔ) -->
+    <!-- 4. MEDIA GALLERY CAROUSEL (HẠT SEN KHÔ - 5 ẢNH THẬT SẮC NÉT, KHÔNG CÓ KHUNG ĐEN) -->
     <section class="relative bg-stone-100 overflow-hidden" aria-label="Thư viện ảnh sản phẩm hạt sen">
       <div class="relative w-full aspect-square bg-stone-100 select-none touch-pan-y" id="carousel-viewport">
-        <!-- Slides Track -->
+        <!-- Slides Track (5 ảnh sản phẩm hạt sen thật) -->
         <div id="carousel-track" class="flex h-full w-full transition-transform duration-300 ease-out">
-          <!-- Slide Video (nếu có file images/video-hat-sen.mp4) -->
-          <div id="slide-video-container" class="min-w-full h-full flex-shrink-0 relative bg-black flex items-center justify-center">
-            <video id="product-video" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover">
-              <source src="images/video-hat-sen.mp4" type="video/mp4">
-            </video>
-            <!-- Nút bật tắt tiếng video -->
-            <button type="button" id="video-mute-btn" onclick="toggleVideoMute()" class="absolute bottom-3 left-3 z-10 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center text-sm backdrop-blur-sm">
-              <i class="ph-bold ph-speaker-slash" id="mute-icon"></i>
-            </button>
-            <span class="absolute top-3 right-3 z-10 px-2 py-0.5 rounded-full bg-black/60 text-white text-[10px] font-semibold flex items-center gap-1 backdrop-blur-sm">
-              <i class="ph-fill ph-video-camera text-rose-400"></i> Video Shop
-            </span>
-          </div>
           <!-- Slide 1 (Ảnh thật shop: gói hạt sen nền tủ gỗ) -->
           <div class="min-w-full h-full flex-shrink-0 relative bg-stone-100">
             <img src="images/hat-sen-that-1.png" alt="Gói Hạt Sen Khô Nguyên Chất nền tủ gỗ" class="w-full h-full object-cover">
@@ -226,7 +213,7 @@
 
         <!-- Indicator Dots -->
         <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10" id="carousel-dots">
-          <!-- Sẽ được render tự động -->
+          <!-- Rendered dynamically -->
         </div>
       </div>
     </section>
@@ -251,17 +238,17 @@
       </div>
     </section>
 
-    <!-- 6. PRODUCT INFO & PRICING DETAILS (HẠT SEN KHÔ) -->
+    <!-- 6. PRODUCT INFO & PRICING DETAILS (MẶC ĐỊNH GÓI 1KG GIÁ RẺ 149.000Đ) -->
     <div class="p-4 bg-white border-b border-stone-100">
       <!-- Price Row -->
       <div class="flex items-baseline gap-2.5 mb-1.5">
-        <span id="display-price" class="text-3xl font-extrabold text-[#FE2C55] tracking-tight">432.000đ</span>
-        <span id="display-compare" class="text-sm font-medium text-stone-400 line-through">447.000đ</span>
-        <span id="display-discount" class="text-[11px] font-bold text-[#FE2C55] bg-red-50 border border-red-200 px-1.5 py-0.5 rounded">-3%</span>
+        <span id="display-price" class="text-3xl font-extrabold text-[#FE2C55] tracking-tight">149.000đ</span>
+        <span id="display-compare" class="text-sm font-medium text-stone-400 line-through">230.000đ</span>
+        <span id="display-discount" class="text-[11px] font-bold text-[#FE2C55] bg-red-50 border border-red-200 px-1.5 py-0.5 rounded">-35%</span>
       </div>
 
       <!-- Title -->
-      <h1 class="text-lg font-extrabold text-stone-900 leading-snug">
+      <h1 class="text-xl font-extrabold text-stone-900 leading-snug">
         Hạt Sen Khô Nguyên Chất
       </h1>
 
@@ -379,8 +366,19 @@
       </div>
     </section>
 
-    <!-- 11. BƯỚC 1: BIỂU MẪU ĐẶT HÀNG (HẠT SEN KHÔ) -->
+    <!-- 11. BIỂU MẪU ĐẶT HÀNG TRỰC TIẾP (BẮN SỰ KIỆN PURCHASE KHI ĐẶT HÀNG) -->
     <section id="order-form-section" class="p-4 bg-white" aria-label="Biểu mẫu đặt hàng">
+      <!-- Khối kích thích mua hàng (Urgency & Scarcity) -->
+      <div class="flex items-center justify-between text-[11px] bg-red-50 text-red-800 p-2.5 rounded-xl border border-red-200 mb-3">
+        <span class="flex items-center gap-1 font-bold">
+          <i class="ph-fill ph-flame text-[#FE2C55] text-sm animate-pulse"></i>
+          Đang có 39 người cùng xem
+        </span>
+        <span class="font-semibold text-stone-600">
+          Chỉ còn 12 suất giá ưu đãi
+        </span>
+      </div>
+
       <div class="bg-gradient-to-r from-stone-900 to-stone-800 text-white p-3.5 rounded-2xl mb-4 shadow-sm flex items-center justify-between">
         <div>
           <h3 class="text-sm font-extrabold flex items-center gap-1.5">
@@ -400,7 +398,7 @@
           <img src="images/hat-sen-that-1.png" alt="Hạt Sen Khô Nguyên Chất" class="w-14 h-14 rounded-xl object-cover border border-stone-200 bg-white">
           <div class="flex-1 min-w-0">
             <h4 class="text-xs font-bold text-stone-900 truncate">Hạt Sen Khô Nguyên Chất</h4>
-            <div id="summary-package-name" class="text-[11px] font-semibold text-[#FE2C55] mt-0.5">Combo 3kg (Tiết kiệm 15.000đ + FREESHIP)</div>
+            <div id="summary-package-name" class="text-[11px] font-semibold text-[#FE2C55] mt-0.5">Gói 1kg — Hạt mẩy tròn, bở thơm</div>
             <div class="text-[10px] text-stone-500 mt-0.5">Đơn vị: Gói theo trọng lượng</div>
           </div>
         </div>
@@ -408,24 +406,24 @@
         <div class="space-y-1.5 text-xs text-stone-600">
           <div class="flex justify-between items-center">
             <span>Tiền hàng:</span>
-            <span id="summary-subtotal" class="font-bold text-stone-900">432.000đ</span>
+            <span id="summary-subtotal" class="font-bold text-stone-900">149.000đ</span>
           </div>
           <div class="flex justify-between items-center">
             <span>Phí vận chuyển:</span>
-            <span id="summary-shipping" class="font-semibold text-emerald-600">MIỄN PHÍ</span>
+            <span id="summary-shipping" class="font-medium text-amber-700 text-[11px]">Shop báo khi gọi xác nhận</span>
           </div>
         </div>
 
         <div class="pt-2 border-t border-stone-200 flex justify-between items-baseline">
           <div>
             <div class="text-xs font-bold text-stone-900">Tổng thanh toán:</div>
-            <div id="summary-ship-note" class="text-[10px] text-emerald-600 font-medium">Đơn này được FREESHIP</div>
+            <div id="summary-ship-note" class="text-[10px] text-amber-700 font-medium">(+ phí ship khi xác nhận)</div>
           </div>
-          <div id="summary-total" class="text-2xl font-extrabold text-[#FE2C55]">432.000đ</div>
+          <div id="summary-total" class="text-2xl font-extrabold text-[#FE2C55]">149.000đ</div>
         </div>
       </div>
 
-      <!-- Input Form (BƯỚC 1) -->
+      <!-- Input Form -->
       <form id="order-form" onsubmit="handleOrderSubmit(event)" novalidate class="space-y-3.5">
         <!-- Họ và tên -->
         <div>
@@ -492,20 +490,20 @@
           </p>
         </div>
 
-        <!-- Nút Đặt Hàng Bước 1 -->
-        <button type="submit" id="step1-submit-btn" class="w-full py-4 px-4 rounded-2xl bg-gradient-to-r from-[#FE2C55] via-[#FF0050] to-[#FF3366] text-white font-extrabold text-base tracking-wide shadow-lg cta-glow flex items-center justify-center gap-2 active:scale-[0.99] transition-transform">
-          <i class="ph-bold ph-shopping-bag text-lg"></i>
-          <span id="step1-btn-text">ĐẶT HÀNG NGAY</span>
-          <div id="step1-btn-spinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+        <!-- Nút Submit Form: XÁC NHẬN ĐẶT HÀNG NGAY -->
+        <button type="submit" id="submit-btn" class="w-full py-4 px-4 rounded-2xl bg-gradient-to-r from-[#FE2C55] via-[#FF0050] to-[#FF3366] text-white font-extrabold text-base tracking-wide shadow-lg cta-glow flex items-center justify-center gap-2 active:scale-[0.99] transition-transform">
+          <i class="ph-bold ph-paper-plane-tilt text-lg"></i>
+          <span id="btn-text">XÁC NHẬN ĐẶT HÀNG NGAY</span>
+          <div id="btn-spinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
         </button>
 
         <p class="text-[11px] text-center text-stone-500">
-          🔒 Bảo mật thông tin • Cam kết không làm phiền • Hỗ trợ 24/7
+          🔒 Tự động lưu nháp • Kiểm tra thông tin trước khi nhận • Hỗ trợ 24/7
         </p>
       </form>
     </section>
 
-    <!-- 12. KHỐI GIỚI THIỆU SẢN PHẨM CÒN LẠI (HẠT BÍ NẾP) -->
+    <!-- 12. KHỐI GIỚI THIỆU HẠT BÍ NẾP Ở CUỐI TRANG -->
     <section class="p-4 bg-[#F8F9FA] border-t-2 border-stone-200" aria-label="Giới thiệu thêm Hạt Bí Nếp">
       <div class="p-4 bg-white rounded-2xl border border-stone-200 shadow-sm space-y-3">
         <div class="flex items-center gap-2">
@@ -545,79 +543,12 @@
       </div>
     </section>
 
-    <!-- 13. KHỐI ĐẶC SẢN KHÁC CỦA SHOP (Quả La Hán, Hướng Dương, Lạc Tẩm Sữa) -->
-    <section class="p-4 bg-white border-t border-stone-200" aria-label="Đặc sản khác của shop">
-      <div class="flex items-center justify-between mb-3">
-        <div class="flex items-center gap-1.5">
-          <i class="ph-fill ph-sparkle text-amber-500 text-base"></i>
-          <h3 class="text-sm font-bold text-stone-900 uppercase">ĐẶC SẢN KHÁC CỦA SHOP</h3>
-        </div>
-        <span class="text-[11px] text-stone-500">Đặt nhanh qua Zalo</span>
-      </div>
-
-      <div class="space-y-3">
-        <!-- Đặc sản 1: Quả La Hán Khô -->
-        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex gap-3">
-          <img src="images/la-han.jpg" alt="Quả La Hán Khô" class="w-24 h-24 rounded-xl object-cover border border-stone-200 flex-shrink-0 bg-stone-200">
-          <div class="flex-1 min-w-0 flex flex-col justify-between">
-            <div>
-              <h4 class="text-xs font-bold text-stone-900">Quả La Hán Khô</h4>
-              <p class="text-[11px] text-stone-500 line-clamp-2 mt-0.5">Trái to đều quả, vỏ mỏng ruột ngọt đậm, thanh nhiệt giải khát.</p>
-              <div class="text-[10px] text-stone-700 font-medium mt-1 bg-white p-1.5 rounded-lg border border-stone-200/80">
-                Túi 5 quả: <b>45.000đ</b> · Túi 10 quả: <b>85.000đ</b>
-              </div>
-            </div>
-            <a href="https://zalo.me/0968806602" target="_blank" rel="noopener noreferrer" class="mt-2 py-1.5 px-3 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-xs active:scale-95 transition-transform">
-              <i class="ph-fill ph-chat-circle-dots"></i>
-              <span>ĐẶT QUA ZALO</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Đặc sản 2: Hạt Hướng Dương Rang Mộc -->
-        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex gap-3">
-          <img src="images/huong-duong.jpg" alt="Hạt Hướng Dương Rang Mộc" class="w-24 h-24 rounded-xl object-cover border border-stone-200 flex-shrink-0 bg-stone-200">
-          <div class="flex-1 min-w-0 flex flex-col justify-between">
-            <div>
-              <h4 class="text-xs font-bold text-stone-900">Hạt Hướng Dương Rang Mộc</h4>
-              <p class="text-[11px] text-stone-500 line-clamp-2 mt-0.5">Rang mộc nguyên vị, hạt to đều, bùi thơm.</p>
-              <div class="text-[10px] text-stone-700 font-medium mt-1 bg-white p-1.5 rounded-lg border border-stone-200/80">
-                Gói 500g: <b>59.000đ</b> · Gói 1kg: <b>109.000đ</b>
-              </div>
-            </div>
-            <a href="https://zalo.me/0968806602" target="_blank" rel="noopener noreferrer" class="mt-2 py-1.5 px-3 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-xs active:scale-95 transition-transform">
-              <i class="ph-fill ph-chat-circle-dots"></i>
-              <span>ĐẶT QUA ZALO</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Đặc sản 3: Hạt Lạc Tẩm Sữa -->
-        <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 flex gap-3">
-          <img src="images/lac-tam-sua.jpg" alt="Hạt Lạc Tẩm Sữa" class="w-24 h-24 rounded-xl object-cover border border-stone-200 flex-shrink-0 bg-stone-200">
-          <div class="flex-1 min-w-0 flex flex-col justify-between">
-            <div>
-              <h4 class="text-xs font-bold text-stone-900">Hạt Lạc Tẩm Sữa</h4>
-              <p class="text-[11px] text-stone-500 line-clamp-2 mt-0.5">Đậu phộng tẩm sữa giòn thơm, ăn vặt lạ miệng.</p>
-              <div class="text-[10px] text-stone-700 font-medium mt-1 bg-white p-1.5 rounded-lg border border-stone-200/80">
-                Gói 500g: <b>55.000đ</b> · Gói 1kg: <b>99.000đ</b>
-              </div>
-            </div>
-            <a href="https://zalo.me/0968806602" target="_blank" rel="noopener noreferrer" class="mt-2 py-1.5 px-3 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-xs active:scale-95 transition-transform">
-              <i class="ph-fill ph-chat-circle-dots"></i>
-              <span>ĐẶT QUA ZALO</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 14. FOOTER INFO -->
+    <!-- 13. FOOTER INFO -->
     <footer class="p-5 bg-stone-100 text-center text-xs text-stone-500 border-t border-stone-200 space-y-2">
       <div class="font-bold text-stone-800 text-sm">NÔNG SẢN MỘC</div>
       <p class="text-[11px] leading-relaxed">
         Đặc sản Hạt Sen Khô Tự Nhiên &amp; Hạt Bí Nếp Rang Mộc<br>
-        Hotline / Zalo: <a href="tel:0968806602" class="font-bold text-stone-900 hover:text-[#FE2C55]">0968.806.602</a><br>
+        Hotline: <a href="tel:0968806602" class="font-bold text-stone-900 hover:text-[#FE2C55]">0968.806.602</a><br>
         Vùng giao hàng: CHỈ giao TP.HCM &amp; các tỉnh từ Huế trở vào Nam
       </p>
       <p class="text-[10px] text-stone-400 pt-2 border-t border-stone-200">
@@ -625,14 +556,14 @@
       </p>
     </footer>
 
-    <!-- 15. STICKY BOTTOM NAVIGATION BAR (Ẩn khi ở Bước 2 kiểm tra lại) -->
+    <!-- 14. STICKY BOTTOM NAVIGATION BAR -->
     <aside id="sticky-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-stone-200 px-3.5 py-2.5 flex items-center justify-between shadow-[0_-4px_25px_rgba(0,0,0,0.08)]" aria-label="Thanh mua nhanh">
       <div class="flex flex-col justify-center">
         <span class="text-[10px] text-stone-500 font-medium">Tổng thanh toán:</span>
         <div class="flex items-baseline gap-1.5">
-          <span id="bottom-total-price" class="text-xl font-extrabold text-[#FE2C55] tracking-tight">432.000đ</span>
+          <span id="bottom-total-price" class="text-xl font-extrabold text-[#FE2C55] tracking-tight">149.000đ</span>
         </div>
-        <span id="bottom-shipping-subtext" class="text-[10px] text-emerald-600 font-semibold">FREESHIP</span>
+        <span id="bottom-shipping-subtext" class="text-[10px] text-amber-700 font-medium">+ ship khi xác nhận</span>
       </div>
 
       <button type="button" onclick="scrollToFormAndTrack()" class="py-2.5 px-6 rounded-xl bg-gradient-to-r from-[#FE2C55] to-[#FF0050] text-white font-extrabold text-sm tracking-wide shadow-md cta-glow flex items-center gap-1.5 active:scale-95 transition-transform animate-pulseSubtle">
@@ -641,17 +572,14 @@
       </button>
     </aside>
 
-    <!-- 16. FLOATING CONTACT BUTTONS (Right Side) -->
+    <!-- 15. FLOATING CONTACT BUTTONS (Right Side) -->
     <div class="fixed right-3 bottom-20 z-40 flex flex-col items-center gap-2.5 select-none" id="floating-contacts">
-      <a href="https://zalo.me/0968806602" target="_blank" rel="noopener noreferrer" title="Nhắn Zalo" class="w-11 h-11 rounded-full bg-[#0068FF] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform contact-bubble">
-        <span class="font-extrabold text-[11px] tracking-tighter">Zalo</span>
-      </a>
       <a href="tel:0968806602" title="Gọi Hotline: 0968.806.602" class="w-11 h-11 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform contact-bubble">
         <i class="ph-fill ph-phone text-lg"></i>
       </a>
     </div>
 
-    <!-- 17. SALES POP NOTIFICATION ("Vừa có người đặt hàng") -->
+    <!-- 16. SALES POP NOTIFICATION ("Vừa có người đặt hàng") -->
     <div id="sales-pop" class="fixed left-3 bottom-20 z-30 max-w-[275px] bg-white/95 backdrop-blur-md border border-stone-200/90 rounded-2xl p-2.5 shadow-xl items-center gap-2.5 text-xs text-stone-800 hidden animate-popSlideUp">
       <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 text-base">
         <i class="ph-fill ph-check-fat"></i>
@@ -664,157 +592,61 @@
       </button>
     </div>
 
-    <!-- ============================================================== -->
-    <!-- 18. BƯỚC 2: MÀN HÌNH KIỂM TRA LẠI & XÁC NHẬN (TOÀN TRANG ĐÈ LÊN) -->
-    <!-- ============================================================== -->
-    <div id="step2-screen" class="fixed inset-0 z-50 bg-stone-100 overflow-y-auto hidden">
-      <div class="max-w-md mx-auto min-h-screen bg-white shadow-2xl flex flex-col justify-between pb-32 relative">
-        <!-- Header bước 2 -->
-        <div class="bg-gradient-to-r from-stone-900 to-stone-800 text-white p-4 sticky top-0 z-20 shadow-md">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-amber-400 flex items-center gap-1">
-              <i class="ph-fill ph-shield-check text-base"></i> BƯỚC 2: RÀ SOÁT LẠI THÔNG TIN
-            </span>
-            <span id="step2-order-code" class="font-mono text-xs font-bold bg-white/10 px-2.5 py-0.5 rounded text-stone-200">#NS-000000</span>
-          </div>
-          <h2 class="text-base font-extrabold text-white mt-1">KIỂM TRA LẠI THÔNG TIN ĐƠN HÀNG</h2>
-          <p class="text-xs text-stone-300">Đơn đã được lưu tạm. Quý khách vui lòng bấm xác nhận để shop gửi hàng.</p>
-        </div>
-
-        <!-- Nội dung thông tin đơn hàng đã điền -->
-        <div class="p-4 space-y-4 flex-1">
-          <!-- Hộp nhắc gọi điện thoại -->
-          <div class="p-3.5 bg-rose-50 border border-rose-200 rounded-2xl">
-            <div class="text-xs text-stone-500 font-semibold mb-1">SỐ ĐIỆN THOẠI NHẬN HÀNG:</div>
-            <div id="step2-phone" class="text-2xl font-black text-rose-600 tracking-wider">0912.345.678</div>
-            <p class="text-[11px] text-rose-800 font-medium mt-1 flex items-center gap-1">
-              <i class="ph-fill ph-phone-call"></i> Shop sẽ gọi vào số này để xác nhận đơn và hẹn giờ giao hàng.
-            </p>
-          </div>
-
-          <!-- Thông tin khách hàng & Địa chỉ -->
-          <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-2 text-xs">
-            <div class="flex justify-between items-start border-b border-stone-200/80 pb-2">
-              <span class="text-stone-500 font-medium">Họ và tên:</span>
-              <span id="step2-name" class="font-bold text-stone-900 text-right ml-2 text-sm">Nguyễn Thị Mai</span>
-            </div>
-            <div class="flex justify-between items-start border-b border-stone-200/80 pb-2">
-              <span class="text-stone-500 font-medium">Địa chỉ giao:</span>
-              <span id="step2-address" class="font-semibold text-stone-900 text-right ml-2 max-w-[220px]">Số 123 đường ABC...</span>
-            </div>
-            <div class="flex justify-between items-start pt-0.5" id="step2-note-row">
-              <span class="text-stone-500 font-medium">Ghi chú:</span>
-              <span id="step2-note" class="text-stone-700 italic text-right ml-2 max-w-[220px]">Giao giờ hành chính</span>
-            </div>
-          </div>
-
-          <!-- Chi tiết sản phẩm & Tiền -->
-          <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-2 text-xs">
-            <div class="flex items-center gap-2.5 pb-2.5 border-b border-stone-200">
-              <img src="images/hat-sen-that-1.png" alt="Sản phẩm" class="w-12 h-12 rounded-xl object-cover border border-stone-200">
-              <div>
-                <h4 class="font-bold text-stone-900 text-xs">Hạt Sen Khô Nguyên Chất</h4>
-                <div id="step2-pkg-name" class="font-extrabold text-[#FE2C55] text-xs">Combo 3kg (FREESHIP)</div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center text-stone-600">
-              <span>Tiền hàng:</span>
-              <span id="step2-subtotal" class="font-bold text-stone-900">432.000đ</span>
-            </div>
-            <div class="flex justify-between items-center text-stone-600 border-b border-stone-200/80 pb-2">
-              <span>Phí vận chuyển:</span>
-              <span id="step2-shipping" class="font-bold text-emerald-600">MIỄN PHÍ</span>
-            </div>
-
-            <div class="flex justify-between items-baseline pt-1">
-              <div>
-                <div class="font-extrabold text-stone-900 text-sm">TỔNG THANH TOÁN:</div>
-                <div class="text-[10px] text-stone-500">Thanh toán khi nhận hàng (COD)</div>
-              </div>
-              <div id="step2-total" class="text-3xl font-black text-[#FE2C55]">432.000đ</div>
-            </div>
-          </div>
-
-          <!-- Thông báo COD an toàn -->
-          <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 flex items-center gap-2 text-xs text-emerald-900">
-            <i class="ph-fill ph-shield-check text-emerald-600 text-lg flex-shrink-0"></i>
-            <span><strong>Kiểm tra hàng trước khi trả tiền</strong> — đúng chuẩn hạt sen khô sạch, bở bùi mới nhận.</span>
-          </div>
-        </div>
-
-        <!-- THANH NÚT XÁC NHẬN TO BẢN GHIM CỐ ĐỊNH Ở ĐÁY BƯỚC 2 -->
-        <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 bg-white/95 backdrop-blur-md border-t border-stone-200 p-3 shadow-2xl space-y-1.5">
-          <button type="button" id="step2-confirm-btn" onclick="handleStep2Confirm()" class="w-full min-h-[64px] py-4 px-4 rounded-2xl bg-gradient-to-r from-[#FE2C55] via-[#FF0050] to-[#FF4500] text-white font-black text-lg tracking-wider shadow-xl cta-glow flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
-            <i class="ph-bold ph-check-circle text-2xl"></i>
-            <span id="step2-btn-text">✓ XÁC NHẬN ĐƠN HÀNG</span>
-            <div id="step2-btn-spinner" class="hidden w-6 h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
-          </button>
-          <button type="button" onclick="backToStep1()" class="w-full py-2 text-stone-500 hover:text-stone-800 text-xs font-semibold flex items-center justify-center gap-1 transition-colors">
-            <i class="ph-bold ph-arrow-left"></i>
-            <span>← Sửa lại thông tin</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============================================================== -->
-    <!-- 19. MÀN HÌNH ĐẶT HÀNG THÀNH CÔNG (Sau khi bấm Xác nhận ở bước 2) -->
-    <!-- ============================================================== -->
-    <div id="success-screen" class="fixed inset-0 z-50 bg-stone-100 overflow-y-auto hidden">
-      <div class="max-w-md mx-auto min-h-screen bg-white shadow-2xl flex flex-col justify-center items-center p-6 text-center">
-        <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-4xl mb-4 shadow-inner animate-pulseSubtle">
+    <!-- 17. POPUP MODAL ĐẶT HÀNG THÀNH CÔNG -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+      <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl relative animate-popSlideUp">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center text-3xl mb-3 shadow-inner animate-pulseSubtle">
           <i class="ph-fill ph-check-fat"></i>
         </div>
 
-        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-2">ĐÃ XÁC NHẬN THÀNH CÔNG</span>
-        <h2 class="text-2xl font-black text-stone-900 mb-1">ĐẶT HÀNG THÀNH CÔNG!</h2>
+        <span class="px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold uppercase tracking-wider mb-1.5 inline-block">ĐÃ ĐẶT HÀNG THÀNH CÔNG</span>
+        <h3 class="text-xl font-black text-stone-900 mb-1">ĐẶT HÀNG THÀNH CÔNG!</h3>
         
-        <div class="my-3 px-4 py-1.5 rounded-xl bg-red-50 border border-red-200 inline-block font-mono font-black text-[#FE2C55] text-lg" id="success-order-code">
+        <div class="my-2 px-3.5 py-1 rounded-xl bg-red-50 border border-red-200 inline-block font-mono font-black text-[#FE2C55] text-base" id="modal-order-id">
           #NS-000000
         </div>
 
-        <p class="text-sm text-stone-700 leading-relaxed max-w-xs mb-4">
+        <p class="text-xs text-stone-600 mb-3 leading-relaxed">
           Shop sẽ gọi xác nhận và gửi hàng sớm nhất.<br>
           <strong>Cảm ơn bạn đã ủng hộ Nông Sản Mộc!</strong>
         </p>
 
-        <div class="w-full bg-stone-50 p-4 rounded-2xl border border-stone-200 text-left text-xs space-y-2 mb-6">
+        <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 text-left text-xs space-y-1.5 mb-4">
           <div class="flex justify-between">
-            <span class="text-stone-500">Người nhận:</span>
-            <span id="success-name" class="font-bold text-stone-900"></span>
+            <span class="text-stone-500">Khách hàng:</span>
+            <span id="modal-name" class="font-bold text-stone-900 ml-2"></span>
           </div>
           <div class="flex justify-between">
             <span class="text-stone-500">Số điện thoại:</span>
-            <span id="success-phone" class="font-bold text-rose-600"></span>
+            <span id="modal-phone" class="font-bold text-rose-600 ml-2"></span>
           </div>
           <div class="flex justify-between">
             <span class="text-stone-500">Gói mua:</span>
-            <span id="success-pkg" class="font-semibold text-stone-900"></span>
+            <span id="modal-package" class="font-semibold text-stone-900 ml-2"></span>
           </div>
           <div class="flex justify-between items-baseline pt-2 border-t border-stone-200">
-            <span class="font-bold text-stone-800">Tổng thanh toán:</span>
-            <span id="success-total" class="font-black text-[#FE2C55] text-xl"></span>
+            <span class="font-bold text-stone-800">Tổng thanh toán (COD):</span>
+            <span id="modal-total" class="font-black text-[#FE2C55] text-base"></span>
           </div>
         </div>
 
-        <div class="w-full space-y-2.5">
-          <a href="tel:0968806602" class="w-full py-3.5 px-4 rounded-2xl bg-emerald-600 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg hover:bg-emerald-700 transition-colors">
-            <i class="ph-fill ph-phone-call text-lg"></i>
-            <span>Gọi Shop Xác Nhận (0968.806.602)</span>
+        <p class="text-[11px] text-amber-800 bg-amber-50 p-2 rounded-xl border border-amber-200 mb-4 leading-relaxed font-medium">
+          📞 Quý khách vui lòng chú ý điện thoại từ số <strong>0968.806.602</strong> để nhận hàng đúng hẹn nhé!
+        </p>
+
+        <div class="space-y-2">
+          <a href="tel:0968806602" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-md transition-colors">
+            <i class="ph-fill ph-phone-call text-base"></i>
+            <span>Gọi Shop Xác Nhận Ngay (0968.806.602)</span>
           </a>
-          <a href="https://zalo.me/0968806602" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-2xl bg-[#0068FF] text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg hover:bg-blue-700 transition-colors">
-            <i class="ph-fill ph-chat-circle-dots text-lg"></i>
-            <span>Nhắn Tin Qua Zalo Shop</span>
-          </a>
-          <button type="button" onclick="resetToNewOrder()" class="w-full py-2.5 text-stone-500 hover:text-stone-800 text-xs font-semibold">
-            Tiếp tục mua hàng
+          <button type="button" onclick="closeSuccessModal()" class="w-full py-2 text-stone-500 hover:text-stone-800 text-xs font-semibold">
+            Đóng cửa sổ này
           </button>
         </div>
       </div>
     </div>
 
-    <!-- 20. LIGHTBOX MODAL CHO ẢNH REVIEWS -->
+    <!-- 18. LIGHTBOX MODAL CHO ẢNH REVIEWS -->
     <div id="review-image-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="closeReviewModal()">
       <div class="max-w-xs w-full bg-white rounded-2xl overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
         <img id="review-modal-img" src="" alt="Ảnh review từ khách hàng" class="w-full h-auto max-h-[80vh] object-contain bg-black">
@@ -825,22 +657,39 @@
       </div>
     </div>
 
+    <!-- 19. FLOATING PIXEL TESTER TOOLBAR (DEBUG TOOLBAR GÓC TRÁI DƯỚI) -->
+    <div id="pixel-tester-widget" class="fixed bottom-20 left-3 z-50 select-none">
+      <div id="pixel-tester-panel" class="hidden bg-stone-900/95 text-white p-3 rounded-2xl shadow-2xl border border-rose-500/40 backdrop-blur-md max-w-[260px] animate-popSlideUp space-y-2">
+        <div class="flex items-center justify-between border-b border-stone-800 pb-1.5">
+          <span class="text-[11px] font-bold text-amber-400 flex items-center gap-1">
+            <i class="ph-fill ph-cpu text-rose-500"></i> Pixel Test Tool
+          </span>
+          <button type="button" onclick="togglePixelTester()" class="text-stone-400 hover:text-white text-xs p-0.5">✕</button>
+        </div>
+        <p class="text-[10px] text-stone-300 leading-snug">
+          Kích hoạt ngay sự kiện <b>Purchase</b> lên Meta Pixel (ID: 1511253034166691) để đạt 100% thiết lập.
+        </p>
+        <button type="button" onclick="triggerManualPurchaseTest()" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+          <i class="ph-bold ph-lightning"></i>
+          <span>⚡ Bắn Test Sự Kiện Purchase</span>
+        </button>
+      </div>
+      <!-- Pill button toggle -->
+      <button type="button" id="pixel-tester-toggle-btn" onclick="togglePixelTester()" title="Công cụ kiểm tra Meta Pixel" class="mt-1 px-2.5 py-1.5 rounded-full bg-stone-900/90 hover:bg-stone-900 text-amber-300 border border-amber-400/30 text-[10px] font-bold shadow-lg flex items-center gap-1 backdrop-blur-sm active:scale-95 transition-transform">
+        <i class="ph-fill ph-sparkle text-rose-500"></i>
+        <span>⚡ Test Pixel Purchase</span>
+      </button>
+    </div>
+
   </div><!-- /Mobile Frame -->
 
   <!-- Load Dữ liệu đánh giá từ file reviews-data.js -->
   <script src="reviews-data.js"></script>
 
   <!-- ============================================================== -->
-  <!-- JAVASCRIPT LOGIC (HẠT SEN KHÔ PAGE - 2-STEP ORDER FLOW) -->
+  <!-- JAVASCRIPT LOGIC (HẠT SEN KHÔ - BẮN PURCHASE TRỰC TIẾP & AUTO-TEST) -->
   <!-- ============================================================== -->
   <script>
-    // Cấu hình shop & sản phẩm
-    const SHOP_STATS = {
-      "hat-sen": { diem: 5.0, so_danh_gia: 168, nguon: "TikTok Shop" },
-      "hat-bi": null
-    };
-
-    // Dữ liệu gói hạt sen từ du-lieu-san-pham.json
     const PRODUCT_INFO = {
       name: "Hạt Sen Khô Nguyên Chất",
       freeship_from_kg: 3,
@@ -860,10 +709,10 @@
           label: 'Gói 1kg',
           price: 149000,
           compare_at: 230000,
-          note: '',
+          note: 'Hạt mẩy tròn, bở thơm',
           freeship: false,
           weight_kg: 1,
-          tag: null
+          tag: 'BÁN CHẠY NHẤT' // MẶC ĐỊNH CHỌN SẴN 1KG ĐỂ GIÁ RẺ HẤP DẪN
         },
         {
           id: 'sen-2kg',
@@ -883,7 +732,7 @@
           note: 'Tiết kiệm 15.000đ + FREESHIP',
           freeship: true,
           weight_kg: 3,
-          tag: 'PHỔ BIẾN NHẤT' // Mặc định chọn sẵn
+          tag: 'FREESHIP'
         },
         {
           id: 'sen-5kg',
@@ -898,28 +747,22 @@
       ]
     };
 
-    // Đơn hàng thật gần nhất do shop cập nhật (Sales pop)
+    // Đơn hàng gần nhất hiển thị Sales Pop
     const DON_HANG_GAN_DAY = [
-      { ten: "Nguyễn Thu Hằng", tinh: "Cần Thơ", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Combo 3kg", thoi_gian_phut: 12 },
+      { ten: "Nguyễn Thu Hằng", tinh: "Cần Thơ", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Gói 1kg", thoi_gian_phut: 12 },
       { ten: "Hoàng Kim Oanh", tinh: "Bình Dương", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Gói 1kg", thoi_gian_phut: 28 },
       { ten: "Đặng Thị Thảo", tinh: "Đà Nẵng", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Combo 3kg", thoi_gian_phut: 45 },
-      { ten: "Bùi Văn Phúc", tinh: "TP. Hồ Chí Minh", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Combo 5kg", thoi_gian_phut: 70 }
+      { ten: "Bùi Văn Phúc", tinh: "TP. Hồ Chí Minh", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Combo 2kg", thoi_gian_phut: 70 }
     ];
 
-    let currentPackageId = 'sen-3kg'; // Mặc định gói 3kg
+    let currentPackageId = 'sen-1kg'; // MẶC ĐỊNH GÓI 1KG (149.000đ)
     let currentSlideIndex = 0;
-    let hasVideo = true;
-    let totalSlides = 6;
+    const totalSlides = 5; // 5 ảnh thật, không có video để tránh khung đen
     let hasTrackedInitiateCheckout = false;
     let isUserTyping = false;
     let isSalesPopSessionClosed = false;
     let salesPopCount = 0;
     const MAX_SALES_POPS = 12;
-
-    // Quản lý trạng thái đơn hàng 2 bước
-    let activeOrderId = null;
-    let isRevision = false;
-    let currentOrderData = null;
 
     function formatVND(num) {
       if (num == null) return '';
@@ -955,7 +798,7 @@
     /* =================================================================
        LƯU NHÁP FORM VÀO LOCALSTORAGE
        ================================================================= */
-    const DRAFT_KEY = 'nongsan_order_draft';
+    const DRAFT_KEY = 'nongsan_order_draft_sen';
 
     function saveDraft() {
       try {
@@ -967,9 +810,7 @@
           packageId: currentPackageId
         };
         localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
-      } catch (e) {
-        // Trình duyệt chặn localStorage hoặc private mode
-      }
+      } catch (e) {}
     }
 
     function loadDraft() {
@@ -987,16 +828,33 @@
       } catch (e) {}
     }
 
-    // Theo dõi người dùng nhập form để lưu nháp
     ['input-name', 'input-phone', 'input-address', 'input-note'].forEach(id => {
       const el = document.getElementById(id);
-      if (el) {
-        el.addEventListener('input', saveDraft);
-      }
+      if (el) el.addEventListener('input', saveDraft);
     });
 
     /* =================================================================
-       PIXEL TRACKING
+       TOAST NOTIFICATION (Hiển thị khi bắn sự kiện Pixel)
+       ================================================================= */
+    function showToast(message) {
+      let toast = document.getElementById('pixel-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'pixel-toast';
+        toast.className = 'fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-stone-900/95 text-white text-xs font-bold px-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2 border border-emerald-500/40 backdrop-blur-md transition-all duration-300 pointer-events-none opacity-0 -translate-y-2';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<i class="ph-fill ph-check-circle text-emerald-400 text-base"></i><span>${message}</span>`;
+      toast.classList.remove('opacity-0', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-2');
+      }, 4000);
+    }
+
+    /* =================================================================
+       PIXEL TRACKING (CHUẨN QUỐC TẾ)
        ================================================================= */
     function trackAddToCart(pkg) {
       if (window.fbq) {
@@ -1015,6 +873,75 @@
       }
     }
 
+    function trackPurchaseEvent(pkg) {
+      if (window.fbq) {
+        window.fbq('track', 'Purchase', {
+          value: pkg.price,
+          currency: 'VND',
+          content_name: `${PRODUCT_INFO.name} — ${pkg.label}`,
+          content_type: 'product',
+          num_items: 1
+        });
+        window.fbq('track', 'Lead');
+      }
+      console.log('✅ Đã bắn sự kiện Purchase lên Meta Pixel:', pkg.label, pkg.price);
+    }
+
+    /* =================================================================
+       AUTO-TEST QUA URL PARAMETER (?autotest=purchase)
+       ================================================================= */
+    function checkAutoTest() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('autotest') === 'purchase' || params.get('test') === 'purchase') {
+        setTimeout(() => {
+          const selectedPkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId) || PRODUCT_INFO.packages[1];
+          const testVal = selectedPkg ? selectedPkg.price : 149000;
+          const testName = selectedPkg ? `${PRODUCT_INFO.name} — ${selectedPkg.label} (Test Tự Động)` : 'Đơn hàng Test Tự động';
+
+          if (window.fbq) {
+            window.fbq('track', 'Purchase', {
+              value: testVal,
+              currency: 'VND',
+              content_name: testName,
+              content_type: 'product',
+              num_items: 1
+            });
+          }
+          console.log('✅ Đã tự động bắn sự kiện Test Purchase lên Meta Pixel!');
+          showToast(`⚡ Đã gửi tín hiệu Test Purchase (${formatVND(testVal)}) tới Meta Pixel thành công!`);
+        }, 1500);
+      }
+    }
+
+    /* =================================================================
+       WIDGET PIXEL TESTER
+       ================================================================= */
+    function togglePixelTester() {
+      const panel = document.getElementById('pixel-tester-panel');
+      panel.classList.toggle('hidden');
+    }
+
+    function triggerManualPurchaseTest() {
+      const selectedPkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId) || PRODUCT_INFO.packages[1];
+      const amount = selectedPkg ? selectedPkg.price : 149000;
+      const name = selectedPkg ? `${PRODUCT_INFO.name} — ${selectedPkg.label}` : 'Đơn hàng Test Pixel';
+
+      if (window.fbq) {
+        window.fbq('track', 'Purchase', {
+          value: amount,
+          currency: 'VND',
+          content_name: name,
+          content_type: 'product',
+          num_items: 1
+        });
+      }
+      console.log('✅ Đã bắn test sự kiện Purchase:', name, amount);
+      showToast(`⚡ Đã gửi thành công sự kiện Purchase (${formatVND(amount)}) tới Meta Pixel!`);
+    }
+
+    /* =================================================================
+       PACKAGE SELECTION & RENDERING
+       ================================================================= */
     function selectPackage(pkgId) {
       currentPackageId = pkgId;
       renderPackages();
@@ -1027,7 +954,7 @@
       const container = document.getElementById('packages-list');
       container.innerHTML = '';
 
-      const selectedPkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId) || PRODUCT_INFO.packages[3];
+      const selectedPkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId) || PRODUCT_INFO.packages[1];
 
       // Update Top Price Block
       document.getElementById('display-price').textContent = formatVND(selectedPkg.price);
@@ -1117,7 +1044,7 @@
       }
 
       // Update Form Summary & Bottom Bar
-      document.getElementById('summary-package-name').textContent = `${selectedPkg.label} ${selectedPkg.note ? '— ' + selectedPkg.note : ''}`;
+      document.getElementById('summary-package-name').textContent = `${selectedPkg.label} — ${selectedPkg.note || ''}`;
       document.getElementById('summary-subtotal').textContent = formatVND(selectedPkg.price);
 
       const shipEl = document.getElementById('summary-shipping');
@@ -1149,23 +1076,10 @@
       }
     }
 
-    // Carousel Navigation
+    /* =================================================================
+       CAROUSEL NAVIGATION (5 ẢNH THẬT, KHÔNG CÓ KHUNG ĐEN)
+       ================================================================= */
     function initCarousel() {
-      const vid = document.getElementById('product-video');
-      if (vid) {
-        vid.addEventListener('error', () => {
-          // Nếu không có video -> bỏ slide video
-          const vidSlide = document.getElementById('slide-video-container');
-          if (vidSlide) {
-            vidSlide.remove();
-            hasVideo = false;
-            totalSlides = 5;
-            buildCarouselDots();
-            updateCarousel();
-          }
-        });
-      }
-
       buildCarouselDots();
       updateCarousel();
     }
@@ -1177,18 +1091,6 @@
         const dot = document.createElement('span');
         dot.className = `h-1.5 rounded-full transition-all ${i === 0 ? 'bg-white w-4' : 'bg-white/50 w-1.5'}`;
         dotsCont.appendChild(dot);
-      }
-    }
-
-    function toggleVideoMute() {
-      const vid = document.getElementById('product-video');
-      const icon = document.getElementById('mute-icon');
-      if (!vid) return;
-      vid.muted = !vid.muted;
-      if (vid.muted) {
-        icon.className = 'ph-bold ph-speaker-slash';
-      } else {
-        icon.className = 'ph-bold ph-speaker-high';
       }
     }
 
@@ -1225,7 +1127,7 @@
       }
     }, { passive: true });
 
-    // Flash sale countdown tới 23:59:59 hàng ngày
+    // Flash sale countdown
     function updateCountdown() {
       const now = new Date();
       const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
@@ -1286,7 +1188,6 @@
       document.getElementById('review-image-modal').classList.add('hidden');
     }
 
-    // Smooth scroll & initiate checkout
     function scrollToFormAndTrack() {
       trackInitiateCheckout();
       document.getElementById('order-form-section').scrollIntoView({ behavior: 'smooth' });
@@ -1311,9 +1212,8 @@
 
       function triggerNextPop() {
         if (isSalesPopSessionClosed || salesPopCount >= MAX_SALES_POPS) return;
-        const isStep2Open = !document.getElementById('step2-screen').classList.contains('hidden');
-        const isSuccessOpen = !document.getElementById('success-screen').classList.contains('hidden');
-        if (isUserTyping || isStep2Open || isSuccessOpen) {
+        const isModalOpen = !document.getElementById('success-modal').classList.contains('hidden');
+        if (isUserTyping || isModalOpen) {
           setTimeout(triggerNextPop, 10000);
           return;
         }
@@ -1356,7 +1256,7 @@
     }, 20000);
 
     /* =================================================================
-       BƯỚC 1: ĐIỀN FORM VÀ BẤM "ĐẶT HÀNG NGAY" (LƯU ĐƠN TẠM)
+       BẮN SỰ KIỆN PURCHASE THỰC TẾ KHI NGƯỜI DÙNG BẤM "XÁC NHẬN ĐẶT HÀNG NGAY"
        ================================================================= */
     async function handleOrderSubmit(e) {
       e.preventDefault();
@@ -1410,36 +1310,22 @@
       }
 
       // Khóa nút & xoay spinner
-      const submitBtn = document.getElementById('step1-submit-btn');
-      const btnText = document.getElementById('step1-btn-text');
-      const btnSpinner = document.getElementById('step1-btn-spinner');
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnSpinner = document.getElementById('btn-spinner');
 
       submitBtn.disabled = true;
-      btnText.textContent = 'ĐANG LƯU ĐƠN HÀNG...';
+      btnText.textContent = 'ĐANG GỬI ĐƠN HÀNG...';
       btnSpinner.classList.remove('hidden');
 
-      const pkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId);
-      if (!activeOrderId) {
-        activeOrderId = generateOrderId();
-      }
-      const orderId = activeOrderId;
+      const pkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId) || PRODUCT_INFO.packages[1];
+      const orderId = generateOrderId();
       const qcTag = getUTMTag();
       const userNote = noteInput.value.trim();
-      const prefix = isRevision ? '[SỬA LẠI] ' : '';
-      const fullNote = `${prefix}[Mã đơn: ${orderId}] ${qcTag ? qcTag + ' ' : ''}${userNote}`.trim();
+      const fullNote = `[Mã đơn: ${orderId}] ${qcTag ? qcTag + ' ' : ''}${userNote}`.trim();
 
-      // Lưu trữ dữ liệu đơn vào memory để dùng cho Bước 2
-      currentOrderData = {
-        fullName,
-        phone,
-        address,
-        userNote,
-        productName: PRODUCT_INFO.name,
-        pkgLabel: pkg.label,
-        price: pkg.price,
-        freeship: pkg.freeship,
-        orderId
-      };
+      // BẮN SỰ KIỆN PURCHASE CHUẨN QUỐC TẾ NGAY KHI HỢP LỆ
+      trackPurchaseEvent(pkg);
 
       const formData = new FormData();
       formData.append('entry.1663547434', fullName);
@@ -1449,150 +1335,39 @@
       formData.append('entry.148933295', pkg.label);
       formData.append('entry.658159699', String(pkg.price));
       formData.append('entry.1562310325', fullNote);
-      formData.append('entry.1246117709', ''); // Chưa xác nhận bước 2
-
-      const submitUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScp8i2UlZmZIVekpKAk4QldrQNtMuim7O7LH2-_5yyzycDiBA/formResponse';
-
-      try {
-        await fetch(submitUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: formData
-        });
-
-        // Bắn pixel Lead khi đã lưu đơn thành công ở bước 1
-        if (window.fbq) {
-          window.fbq('track', 'Lead');
-        }
-
-        // Chuyển sang BƯỚC 2: Màn hình kiểm tra lại
-        showStep2Screen(currentOrderData);
-
-      } catch (err) {
-        console.error('Lỗi khi gửi bước 1:', err);
-        alert('Kết nối mạng gián đoạn, vui lòng bấm thử lại hoặc liên hệ Zalo 0968.806.602 để đặt hàng.');
-      } finally {
-        submitBtn.disabled = false;
-        btnText.textContent = 'ĐẶT HÀNG NGAY';
-        btnSpinner.classList.add('hidden');
-      }
-    }
-
-    /* =================================================================
-       BƯỚC 2: HIỂN THỊ MÀN HÌNH KIỂM TRA LẠI
-       ================================================================= */
-    function showStep2Screen(data) {
-      document.getElementById('step2-order-code').textContent = data.orderId;
-      document.getElementById('step2-name').textContent = data.fullName;
-      document.getElementById('step2-phone').textContent = data.phone;
-      document.getElementById('step2-address').textContent = data.address;
-      
-      const noteRow = document.getElementById('step2-note-row');
-      if (data.userNote) {
-        document.getElementById('step2-note').textContent = data.userNote;
-        noteRow.classList.remove('hidden');
-      } else {
-        noteRow.classList.add('hidden');
-      }
-
-      document.getElementById('step2-pkg-name').textContent = `${data.pkgLabel} ${data.freeship ? '(FREESHIP)' : ''}`;
-      document.getElementById('step2-subtotal').textContent = formatVND(data.price);
-      document.getElementById('step2-shipping').textContent = data.freeship ? 'MIỄN PHÍ' : 'Shop báo khi gọi xác nhận';
-      document.getElementById('step2-total').textContent = formatVND(data.price);
-
-      // Ẩn thanh bottom mua ngay
-      document.getElementById('sticky-bottom-bar').classList.add('hidden');
-
-      // Mở màn hình kiểm tra lại & cuộn lên đầu
-      const step2El = document.getElementById('step2-screen');
-      step2El.classList.remove('hidden');
-      step2El.scrollTop = 0;
-    }
-
-    function backToStep1() {
-      // Quay lại bước 1 giữ nguyên dữ liệu
-      isRevision = true;
-      document.getElementById('step2-screen').classList.add('hidden');
-      document.getElementById('sticky-bottom-bar').classList.remove('hidden');
-      document.getElementById('order-form-section').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    /* =================================================================
-       BƯỚC 2: KHÁCH BẤM "✓ XÁC NHẬN ĐƠN HÀNG"
-       ================================================================= */
-    async function handleStep2Confirm() {
-      const confirmBtn = document.getElementById('step2-confirm-btn');
-      const btnText = document.getElementById('step2-btn-text');
-      const btnSpinner = document.getElementById('step2-btn-spinner');
-
-      confirmBtn.disabled = true;
-      btnText.textContent = 'ĐANG XÁC NHẬN...';
-      btnSpinner.classList.remove('hidden');
-
-      const data = currentOrderData;
-      const formData = new FormData();
-      formData.append('entry.1663547434', data.fullName);
-      formData.append('entry.1923907202', data.phone);
-      formData.append('entry.1275212180', data.address);
-      formData.append('entry.2132536733', data.productName);
-      formData.append('entry.148933295', data.pkgLabel);
-      formData.append('entry.658159699', String(data.price));
       formData.append('entry.1246117709', 'ĐÃ XÁC NHẬN');
-      formData.append('entry.1562310325', `[XÁC NHẬN ĐƠN ${data.orderId}]`);
 
       const submitUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScp8i2UlZmZIVekpKAk4QldrQNtMuim7O7LH2-_5yyzycDiBA/formResponse';
 
-      let success = false;
       try {
         await fetch(submitUrl, {
           method: 'POST',
           mode: 'no-cors',
           body: formData
         });
-        success = true;
-
-        // BẮN PIXEL PURCHASE Ở BƯỚC XÁC NHẬN NÀY
-        if (window.fbq) {
-          window.fbq('track', 'Purchase', {
-            content_name: `${data.productName} — ${data.pkgLabel}`,
-            value: data.price,
-            currency: 'VND'
-          });
-        }
       } catch (err) {
-        console.error('Lỗi khi gửi xác nhận bước 2:', err);
-        // Tự động thử gửi lại sau 3s trong nền
-        setTimeout(() => {
-          fetch(submitUrl, { method: 'POST', mode: 'no-cors', body: formData }).catch(e => console.error(e));
-        }, 3000);
+        console.error('Lỗi khi gửi đơn hàng:', err);
       } finally {
-        // Luôn chuyển sang màn hình thành công vì đơn đã lưu ở bước 1
+        // Xóa nháp sau khi đã gửi đơn thành công
         localStorage.removeItem(DRAFT_KEY);
-        showSuccessScreen(data);
+
+        // Hiển thị Popup Modal thông báo đặt hàng thành công
+        document.getElementById('modal-order-id').textContent = orderId;
+        document.getElementById('modal-name').textContent = fullName;
+        document.getElementById('modal-phone').textContent = phone;
+        document.getElementById('modal-package').textContent = pkg.label;
+        document.getElementById('modal-total').textContent = formatVND(pkg.price);
+        document.getElementById('success-modal').classList.remove('hidden');
+
+        submitBtn.disabled = false;
+        btnText.textContent = 'XÁC NHẬN ĐẶT HÀNG NGAY';
+        btnSpinner.classList.add('hidden');
+        document.getElementById('order-form').reset();
       }
     }
 
-    function showSuccessScreen(data) {
-      document.getElementById('step2-screen').classList.add('hidden');
-      document.getElementById('success-order-code').textContent = data.orderId;
-      document.getElementById('success-name').textContent = data.fullName;
-      document.getElementById('success-phone').textContent = data.phone;
-      document.getElementById('success-pkg').textContent = data.pkgLabel;
-      document.getElementById('success-total').textContent = formatVND(data.price);
-
-      const successEl = document.getElementById('success-screen');
-      successEl.classList.remove('hidden');
-      successEl.scrollTop = 0;
-    }
-
-    function resetToNewOrder() {
-      document.getElementById('success-screen').classList.add('hidden');
-      document.getElementById('step2-screen').classList.add('hidden');
-      document.getElementById('sticky-bottom-bar').classList.remove('hidden');
-      document.getElementById('order-form').reset();
-      activeOrderId = null;
-      isRevision = false;
-      currentOrderData = null;
+    function closeSuccessModal() {
+      document.getElementById('success-modal').classList.add('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1602,6 +1377,8 @@
       renderReviews();
       loadDraft();
       initSalesPop();
+      checkAutoTest();
+
       const defaultPkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId);
       if (defaultPkg) trackAddToCart(defaultPkg);
     });
