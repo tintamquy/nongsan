@@ -88,12 +88,26 @@
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     body { -webkit-tap-highlight-color: transparent; }
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marquee 25s linear infinite;
+    @keyframes marqueeScroll {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
     }
-    .marquee-track:hover { animation-play-state: paused; }
+    @-webkit-keyframes marqueeScroll {
+      0% { -webkit-transform: translate3d(0, 0, 0); }
+      100% { -webkit-transform: translate3d(-50%, 0, 0); }
+    }
+    .marquee-track {
+      display: inline-flex !important;
+      width: max-content !important;
+      white-space: nowrap !important;
+      will-change: transform;
+      animation: marqueeScroll 22s linear infinite !important;
+      -webkit-animation: marqueeScroll 22s linear infinite !important;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+      -webkit-animation-play-state: paused;
+    }
     .cta-glow {
       box-shadow: 0 4px 25px rgba(254, 44, 85, 0.42);
     }
@@ -113,10 +127,10 @@
     <header class="bg-gradient-to-r from-[#FE2C55] via-[#FF0050] to-[#FF4500] text-white py-2 overflow-hidden shadow-sm sticky top-0 z-30">
       <div class="marquee-track flex items-center whitespace-nowrap text-[12px] font-semibold tracking-wide">
         <span class="inline-flex items-center px-4">
-          ⚡ FLASH SALE HÔM NAY: FREESHIP cho đơn từ 3kg — Giao TP.HCM &amp; từ Huế vào Nam — Kiểm tra hàng trước khi thanh toán ⚡
+          ⚡ FLASH SALE HÔM NAY: FREESHIP cho đơn từ 3kg — Phí ship mặc định 29k đơn dưới 3kg — Giao nhanh TP.HCM &amp; từ Huế vào Nam — Mở hộp kiểm tra trước khi thanh toán ⚡
         </span>
         <span class="inline-flex items-center px-4">
-          ⚡ FLASH SALE HÔM NAY: FREESHIP cho đơn từ 3kg — Giao TP.HCM &amp; từ Huế vào Nam — Kiểm tra hàng trước khi thanh toán ⚡
+          ⚡ FLASH SALE HÔM NAY: FREESHIP cho đơn từ 3kg — Phí ship mặc định 29k đơn dưới 3kg — Giao nhanh TP.HCM &amp; từ Huế vào Nam — Mở hộp kiểm tra trước khi thanh toán ⚡
         </span>
       </div>
     </header>
@@ -159,26 +173,12 @@
       </div>
     </nav>
 
-    <!-- 4. MEDIA GALLERY CAROUSEL (VIDEO MỞ ĐẦU THẬT + ẢNH THẬT) -->
+    <!-- 4. MEDIA GALLERY CAROUSEL (ẢNH THẬT SẢN PHẨM TRƯỚC + VIDEO Ở CUỐI) -->
     <section class="relative bg-stone-100 overflow-hidden" aria-label="Thư viện ảnh sản phẩm hạt bí">
       <div class="relative w-full aspect-square bg-stone-100 select-none touch-pan-y" id="carousel-viewport">
         <!-- Slides Track -->
         <div id="carousel-track" class="flex h-full w-full transition-transform duration-300 ease-out">
-          <!-- Slide Video Mở Đầu (Video hạt bí thật của shop) -->
-          <div id="slide-video-container" class="min-w-full h-full flex-shrink-0 relative bg-black flex items-center justify-center">
-            <video id="product-video" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover">
-              <source src="images/video-hat-bi.mp4" type="video/mp4">
-            </video>
-            <!-- Nút bật tắt tiếng video -->
-            <button type="button" id="video-mute-btn" onclick="toggleVideoMute()" class="absolute bottom-3 left-3 z-10 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center text-sm backdrop-blur-sm">
-              <i class="ph-bold ph-speaker-slash" id="mute-icon"></i>
-            </button>
-            <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full bg-black/60 text-white text-[10px] font-bold flex items-center gap-1 backdrop-blur-sm">
-              <i class="ph-fill ph-video-camera text-rose-500 animate-pulse"></i> Video Thật
-            </span>
-          </div>
-
-          <!-- Slide 1 (Túi hạt bí nếp cầm tay) -->
+          <!-- Slide 1 (Túi hạt bí nếp cầm tay thật) -->
           <div class="min-w-full h-full flex-shrink-0 relative bg-stone-100">
             <img src="images/hat-bi-1.jpg" alt="Túi Hạt Bí Nếp Rang Mộc cầm tay" class="w-full h-full object-cover">
           </div>
@@ -193,6 +193,20 @@
           <!-- Slide 4 (Hạt bí rang củi đặc sản) -->
           <div class="min-w-full h-full flex-shrink-0 relative bg-stone-100">
             <img src="images/hat-bi-4.jpg" alt="Hạt bí rang củi đặc sản" class="w-full h-full object-cover">
+          </div>
+
+          <!-- Slide 5: Video Thật của shop (Đặt ở cuối cùng) -->
+          <div id="slide-video-container" class="min-w-full h-full flex-shrink-0 relative bg-black flex items-center justify-center">
+            <video id="product-video" muted loop playsinline preload="metadata" class="w-full h-full object-cover">
+              <source src="images/video-hat-bi.mp4" type="video/mp4">
+            </video>
+            <!-- Nút bật tắt tiếng video -->
+            <button type="button" id="video-mute-btn" onclick="toggleVideoMute()" class="absolute bottom-3 left-3 z-10 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center text-sm backdrop-blur-sm">
+              <i class="ph-bold ph-speaker-slash" id="mute-icon"></i>
+            </button>
+            <span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full bg-black/60 text-white text-[10px] font-bold flex items-center gap-1 backdrop-blur-sm">
+              <i class="ph-fill ph-video-camera text-rose-500 animate-pulse"></i> Video Thật Của Shop
+            </span>
           </div>
         </div>
 
@@ -606,6 +620,14 @@
             <span class="text-stone-500">Gói mua:</span>
             <span id="modal-package" class="font-semibold text-stone-900 ml-2"></span>
           </div>
+          <div class="flex justify-between">
+            <span class="text-stone-500">Tiền hàng:</span>
+            <span id="modal-subtotal" class="font-semibold text-stone-800 ml-2"></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-stone-500">Phí vận chuyển:</span>
+            <span id="modal-shipping" class="font-bold text-stone-900 ml-2">29.000đ</span>
+          </div>
           <div class="flex justify-between items-baseline pt-2 border-t border-stone-200">
             <span class="font-bold text-stone-800">Tổng thanh toán (COD):</span>
             <span id="modal-total" class="font-black text-[#FE2C55] text-base"></span>
@@ -617,13 +639,17 @@
         </p>
 
         <div class="space-y-2">
-          <a href="tel:0968806602" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-md transition-colors">
-            <i class="ph-fill ph-phone-call text-base"></i>
-            <span>Gọi Shop Xác Nhận Ngay (0968.806.602)</span>
-          </a>
-          <button type="button" onclick="closeSuccessModal()" class="w-full py-2 text-stone-500 hover:text-stone-800 text-xs font-semibold">
-            Đóng cửa sổ này
+          <!-- Nút Xác nhận & Đóng chính -->
+          <button type="button" onclick="closeSuccessModal()" class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all">
+            <i class="ph-bold ph-check-circle text-lg"></i>
+            <span>XÁC NHẬN &amp; ĐÓNG CỬA SỔ</span>
           </button>
+          <!-- Thông tin hỗ trợ thêm (không ép khách gọi) -->
+          <div class="pt-1.5 text-center">
+            <p class="text-[11px] text-stone-500">
+              Cần hỗ trợ thêm thông tin? Hotline: <a href="tel:0968806602" class="font-bold text-stone-800 hover:text-[#FE2C55] underline">0968.806.602</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -732,9 +758,20 @@
     let salesPopCount = 0;
     const MAX_SALES_POPS = 12;
 
+    const DEFAULT_SHIPPING_FEE = 29000;
+
     function formatVND(num) {
       if (num == null) return '';
       return new Intl.NumberFormat('vi-VN').format(num) + 'đ';
+    }
+
+    function getShippingFee(pkg) {
+      return (pkg && pkg.freeship) ? 0 : DEFAULT_SHIPPING_FEE;
+    }
+
+    function getTotalAmount(pkg) {
+      if (!pkg) return 0;
+      return pkg.price + getShippingFee(pkg);
     }
 
     function maskName(name) {
@@ -841,9 +878,10 @@
     }
 
     function trackPurchaseEvent(pkg) {
+      const totalAmount = getTotalAmount(pkg);
       if (window.fbq) {
         window.fbq('track', 'Purchase', {
-          value: pkg.price,
+          value: totalAmount,
           currency: 'VND',
           content_name: `${PRODUCT_INFO.name} — ${pkg.label}`,
           content_type: 'product',
@@ -851,7 +889,7 @@
         });
         window.fbq('track', 'Lead');
       }
-      console.log('✅ Đã bắn sự kiện Purchase lên Meta Pixel:', pkg.label, pkg.price);
+      console.log('✅ Đã bắn sự kiện Purchase lên Meta Pixel:', pkg.label, 'Tổng COD:', totalAmount);
     }
 
     /* =================================================================
@@ -862,7 +900,7 @@
       if (params.get('autotest') === 'purchase' || params.get('test') === 'purchase') {
         setTimeout(() => {
           const selectedPkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId) || PRODUCT_INFO.packages[1];
-          const testVal = selectedPkg ? selectedPkg.price : 119000;
+          const testVal = getTotalAmount(selectedPkg);
           const testName = selectedPkg ? `${PRODUCT_INFO.name} — ${selectedPkg.label} (Test Tự Động)` : 'Đơn hàng Test Tự động';
 
           if (window.fbq) {
@@ -890,7 +928,7 @@
 
     function triggerManualPurchaseTest() {
       const selectedPkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId) || PRODUCT_INFO.packages[1];
-      const amount = selectedPkg ? selectedPkg.price : 119000;
+      const amount = getTotalAmount(selectedPkg);
       const name = selectedPkg ? `${PRODUCT_INFO.name} — ${selectedPkg.label}` : 'Đơn hàng Test Pixel';
 
       if (window.fbq) {
@@ -1017,29 +1055,30 @@
       const shipEl = document.getElementById('summary-shipping');
       const shipNoteEl = document.getElementById('summary-ship-note');
       const totalEl = document.getElementById('summary-total');
+      const shippingFee = getShippingFee(selectedPkg);
+      const totalAmount = getTotalAmount(selectedPkg);
 
       if (selectedPkg.freeship) {
-        shipEl.textContent = 'MIỄN PHÍ';
-        shipEl.className = 'font-bold text-emerald-600';
-        shipNoteEl.textContent = 'Đơn này được FREESHIP ✓';
+        shipEl.textContent = 'FREESHIP (0đ)';
+        shipEl.className = 'font-bold text-emerald-600 text-xs';
+        shipNoteEl.textContent = 'Đơn từ 3kg được FREESHIP ✓';
         shipNoteEl.className = 'text-[10px] text-emerald-600 font-semibold';
-        totalEl.textContent = formatVND(selectedPkg.price);
       } else {
-        shipEl.textContent = 'Shop báo khi gọi xác nhận';
-        shipEl.className = 'font-medium text-amber-700 text-[11px]';
-        shipNoteEl.textContent = '(+ phí ship khi xác nhận)';
-        shipNoteEl.className = 'text-[10px] text-amber-700 font-medium';
-        totalEl.textContent = formatVND(selectedPkg.price);
+        shipEl.textContent = formatVND(DEFAULT_SHIPPING_FEE);
+        shipEl.className = 'font-bold text-stone-900 text-xs';
+        shipNoteEl.textContent = 'Phí ship mặc định: 29.000đ';
+        shipNoteEl.className = 'text-[10px] text-stone-500 font-medium';
       }
+      totalEl.textContent = formatVND(totalAmount);
 
-      document.getElementById('bottom-total-price').textContent = formatVND(selectedPkg.price);
+      document.getElementById('bottom-total-price').textContent = formatVND(totalAmount);
       const btmShip = document.getElementById('bottom-shipping-subtext');
       if (selectedPkg.freeship) {
         btmShip.textContent = 'FREESHIP (Miễn phí)';
         btmShip.className = 'text-[10px] text-emerald-600 font-bold';
       } else {
-        btmShip.textContent = '+ ship khi xác nhận';
-        btmShip.className = 'text-[10px] text-amber-700 font-medium';
+        btmShip.textContent = '(Đã gồm 29k phí ship)';
+        btmShip.className = 'text-[10px] text-stone-500 font-medium';
       }
     }
 
@@ -1081,6 +1120,16 @@
 
       for (let i = 0; i < dots.length; i++) {
         dots[i].className = `h-1.5 rounded-full transition-all ${i === currentSlideIndex ? 'bg-white w-4' : 'bg-white/50 w-1.5'}`;
+      }
+
+      // Tự động phát/tắt video khi lướt tới slide cuối
+      const vid = document.getElementById('product-video');
+      if (vid) {
+        if (currentSlideIndex === totalSlides - 1) {
+          vid.play().catch(() => {});
+        } else {
+          vid.pause();
+        }
       }
     }
 
@@ -1264,7 +1313,10 @@
       const orderId = generateOrderId();
       const qcTag = getUTMTag();
       const userNote = noteInput.value.trim();
-      const fullNote = `[Mã đơn: ${orderId}] ${qcTag ? qcTag + ' ' : ''}${userNote}`.trim();
+      const shippingFee = getShippingFee(pkg);
+      const totalAmount = getTotalAmount(pkg);
+      const shipDesc = shippingFee === 0 ? 'Freeship (0đ)' : 'Ship 29k';
+      const fullNote = `[Mã đơn: ${orderId}] [Tiền hàng: ${formatVND(pkg.price)} | ${shipDesc} | Tổng COD: ${formatVND(totalAmount)}] ${qcTag ? qcTag + ' ' : ''}${userNote}`.trim();
 
       // BẮN SỰ KIỆN PURCHASE CHUẨN QUỐC TẾ NGAY KHI HỢP LỆ
       trackPurchaseEvent(pkg);
@@ -1274,8 +1326,8 @@
       formData.append('entry.1923907202', phone);
       formData.append('entry.1275212180', address);
       formData.append('entry.2132536733', PRODUCT_INFO.name);
-      formData.append('entry.148933295', pkg.label);
-      formData.append('entry.658159699', String(pkg.price));
+      formData.append('entry.148933295', `${pkg.label} (${formatVND(pkg.price)} + ${shipDesc})`);
+      formData.append('entry.658159699', String(totalAmount));
       formData.append('entry.1562310325', fullNote);
       formData.append('entry.1246117709', 'ĐÃ XÁC NHẬN');
 
@@ -1298,7 +1350,9 @@
         document.getElementById('modal-name').textContent = fullName;
         document.getElementById('modal-phone').textContent = phone;
         document.getElementById('modal-package').textContent = pkg.label;
-        document.getElementById('modal-total').textContent = formatVND(pkg.price);
+        document.getElementById('modal-subtotal').textContent = formatVND(pkg.price);
+        document.getElementById('modal-shipping').textContent = shippingFee === 0 ? 'Miễn phí (FREESHIP)' : formatVND(DEFAULT_SHIPPING_FEE);
+        document.getElementById('modal-total').textContent = formatVND(totalAmount);
         document.getElementById('success-modal').classList.remove('hidden');
 
         submitBtn.disabled = false;
