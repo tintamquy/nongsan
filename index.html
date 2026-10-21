@@ -911,8 +911,14 @@
       ]
     };
 
-    // Đơn hàng gần nhất hiển thị Sales Pop (Trang hạt bí chưa có đơn thật trên web -> mảng rỗng)
-    const DON_HANG_GAN_DAY = [];
+    // Đơn hàng gần nhất hiển thị Sales Pop (Đơn mồi kích thích mua sắm)
+    const DON_HANG_GAN_DAY = [
+      { ten: "Nguyễn Thị Hoa", tinh: "Cần Thơ", san_pham: "Hạt Bí Nếp Rang Mộc", goi: "Gói 1kg", thoi_gian_phut: 7 },
+      { ten: "Trần Minh Tâm", tinh: "TP. Hồ Chí Minh", san_pham: "Hạt Bí Nếp Rang Mộc", goi: "Combo 3kg (Freeship)", thoi_gian_phut: 14 },
+      { ten: "Lê Phương Thảo", tinh: "Hà Nội", san_pham: "Hạt Bí Nếp Rang Mộc", goi: "Gói 1kg", thoi_gian_phut: 26 },
+      { ten: "Phạm Hồng Nhung", tinh: "Đồng Nai", san_pham: "Hạt Bí Nếp Rang Mộc", goi: "Combo 2kg", thoi_gian_phut: 41 },
+      { ten: "Võ Hoàng Nam", tinh: "Bình Dương", san_pham: "Hạt Bí Nếp Rang Mộc", goi: "Combo 3kg (Freeship)", thoi_gian_phut: 58 }
+    ];
 
     let currentPackageId = 'bi-1kg'; // MẶC ĐỊNH GÓI 1KG (119.000đ)
     let currentSlideIndex = 0;
@@ -921,7 +927,7 @@
     let isUserTyping = false;
     let isSalesPopSessionClosed = false;
     let salesPopCount = 0;
-    const MAX_SALES_POPS = 3;
+    const MAX_SALES_POPS = 5;
 
     const DEFAULT_SHIPPING_FEE = 29000;
 

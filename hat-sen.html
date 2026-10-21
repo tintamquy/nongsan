@@ -914,10 +914,13 @@
       ]
     };
 
-    // Đơn hàng gần nhất hiển thị Sales Pop (2 đơn thật duy nhất trên web của shop)
+    // Đơn hàng gần nhất hiển thị Sales Pop (Đơn mồi kích thích mua sắm)
     const DON_HANG_GAN_DAY = [
-      { ten: "Mỹ Tích", tinh: "TP. Hồ Chí Minh", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Gói 1kg" },
-      { ten: "Kim Oanh", tinh: "Quảng Ninh", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Gói 1kg" }
+       { ten: "Mỹ Tích", tinh: "TP. Hồ Chí Minh", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Gói 1kg", thoi_gian_phut: 9 },
+       { ten: "Kim Oanh", tinh: "Quảng Ninh", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Combo 3kg (Freeship)", thoi_gian_phut: 18 },
+       { ten: "Nguyễn Thu Hằng", tinh: "Hà Nội", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Gói 1kg", thoi_gian_phut: 31 },
+       { ten: "Đặng Thị Thảo", tinh: "Đà Nẵng", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Combo 2kg", thoi_gian_phut: 47 },
+       { ten: "Bùi Văn Phúc", tinh: "Bình Dương", san_pham: "Hạt Sen Khô Nguyên Chất", goi: "Combo 5kg (Freeship)", thoi_gian_phut: 65 }
     ];
 
     let currentPackageId = 'sen-1kg'; // MẶC ĐỊNH GÓI 1KG (149.000đ)
@@ -927,7 +930,7 @@
     let isUserTyping = false;
     let isSalesPopSessionClosed = false;
     let salesPopCount = 0;
-    const MAX_SALES_POPS = 3;
+    const MAX_SALES_POPS = 5;
 
     const DEFAULT_SHIPPING_FEE = 29000;
 
