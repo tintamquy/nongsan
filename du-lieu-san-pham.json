@@ -38,20 +38,20 @@
       "name": "Hạt Bí Nếp Rang Mộc",
       "packages": [
         {
-          "compare_at": null,
+          "compare_at": 97500,
           "freeship": false,
           "id": "bi-500g",
           "label": "Gói 500g",
-          "note": "Dùng thử",
+          "note": "Dùng thử — Tiết kiệm 32.500đ",
           "price": 65000,
           "weight_kg": 0.5
         },
         {
-          "compare_at": 139000,
+          "compare_at": 195000,
           "freeship": false,
           "id": "bi-1kg",
           "label": "Gói 1kg",
-          "note": "",
+          "note": "Tiết kiệm 76.000đ",
           "price": 119000,
           "weight_kg": 1
         },
@@ -138,7 +138,8 @@
   ],
   "shop": {
     "address": "Thôn Đồng Thịnh, Xã Sông Lô, Phú Thọ",
-    "delivery_zone": "Chỉ giao TP.HCM và các tỉnh từ Huế trở vào Nam (không giao phía Bắc)",
+    "delivery_zone": "Giao hàng toàn quốc — hỗ trợ gửi quốc tế",
+    "export_partnership": "Tìm đối tác xuất khẩu nông sản sạch Việt Nam — liên hệ Zalo 0968806602",
     "hotline_zalo": "0968806602",
     "meta_pixel_id": "1511253034166691",
     "name": "Nông Sản Mộc — Hạt Bí Nếp & Đồ Khô Tự Nhiên",
