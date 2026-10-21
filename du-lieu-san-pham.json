@@ -56,20 +56,20 @@
           "weight_kg": 1
         },
         {
-          "compare_at": 238000,
+          "compare_at": 390000,
           "freeship": false,
           "id": "bi-2kg",
           "label": "Combo 2kg",
-          "note": "Tiết kiệm 2.000đ",
+          "note": "Tiết kiệm 154.000đ",
           "price": 236000,
           "weight_kg": 2
         },
         {
-          "compare_at": 357000,
+          "compare_at": 585000,
           "freeship": true,
           "id": "bi-3kg",
           "label": "Combo 3kg",
-          "note": "Tiết kiệm 2.000đ + FREESHIP",
+          "note": "Tiết kiệm 230.000đ + FREESHIP",
           "price": 355000,
           "weight_kg": 3
         }
@@ -101,39 +101,39 @@
           "freeship": false,
           "id": "sen-1kg",
           "label": "Gói 1kg",
-          "note": "",
+          "note": "Hạt mẩy tròn, bở thơm",
           "price": 149000,
           "weight_kg": 1
         },
         {
-          "compare_at": 298000,
+          "compare_at": 460000,
           "freeship": false,
           "id": "sen-2kg",
           "label": "Combo 2kg",
-          "note": "Tiết kiệm 10.000đ",
+          "note": "Tiết kiệm 172.000đ",
           "price": 288000,
           "weight_kg": 2
         },
         {
-          "compare_at": 447000,
+          "compare_at": 690000,
           "freeship": true,
           "id": "sen-3kg",
           "label": "Combo 3kg",
-          "note": "Tiết kiệm 15.000đ + FREESHIP",
+          "note": "Tiết kiệm 258.000đ + FREESHIP",
           "price": 432000,
           "weight_kg": 3
         },
         {
-          "compare_at": 745000,
+          "compare_at": 1150000,
           "freeship": true,
           "id": "sen-5kg",
           "label": "Combo 5kg",
-          "note": "Tiết kiệm 50.000đ + FREESHIP",
+          "note": "Tiết kiệm 455.000đ + FREESHIP",
           "price": 695000,
           "weight_kg": 5
         }
       ],
-      "price_note": "GIÁ MỚI từ 20/10/2026: 149.000đ/kg (trước đây 195.000đ/kg). FREESHIP từ 3kg. Combo: 2kg tiết kiệm 10k, 3kg tiết kiệm 15k, 5kg tiết kiệm 50k so với mua lẻ."
+      "price_note": "GIÁ MỚI từ 20/10/2026: 149.000đ/kg (giá gốc 230.000đ/kg). FREESHIP từ 3kg. Combo 2kg gạch 460k bán 288k, 3kg gạch 690k bán 432k, 5kg gạch 1.150k bán 695k."
     }
   ],
   "shop": {

@@ -888,10 +888,10 @@
           id: 'bi-2kg',
           label: 'Combo 2kg',
           price: 236000,
-          compare_at: 238000,
-          discount_badge: null,
-          savings_text: 'Tiết kiệm 2.000đ',
-          note: 'Tiết kiệm 2.000đ',
+          compare_at: 390000,
+          discount_badge: 'GIẢM 39%',
+          savings_text: 'Tiết kiệm 154.000đ',
+          note: 'Bổ dưỡng cho cả nhà',
           freeship: false,
           weight_kg: 2,
           tag: null
@@ -900,13 +900,13 @@
           id: 'bi-3kg',
           label: 'Combo 3kg',
           price: 355000,
-          compare_at: 357000,
-          discount_badge: null,
-          savings_text: 'Tiết kiệm 2.000đ + FREESHIP',
-          note: 'Tiết kiệm 2.000đ + FREESHIP',
+          compare_at: 585000,
+          discount_badge: 'GIẢM 39%',
+          savings_text: 'Tiết kiệm 230.000đ + FREESHIP',
+          note: 'Miễn phí giao hàng',
           freeship: true,
           weight_kg: 3,
-          tag: 'FREESHIP'
+          tag: null
         }
       ]
     };
@@ -1166,7 +1166,7 @@
         card.onclick = () => selectPackage(pkg.id);
 
         let tagHtml = '';
-        if (pkg.tag) {
+        if (pkg.tag && (!pkg.freeship || pkg.tag !== 'FREESHIP')) {
           tagHtml += `<span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-[#FE2C55] text-white shadow-xs">${pkg.tag}</span>`;
         }
         if (pkg.freeship) {

@@ -879,10 +879,10 @@
           id: 'sen-2kg',
           label: 'Combo 2kg',
           price: 288000,
-          compare_at: 298000,
-          discount_badge: null,
-          saving_text: 'Tiết kiệm 10.000đ',
-          note: 'Tiết kiệm 10.000đ',
+          compare_at: 460000,
+          discount_badge: 'GIẢM 37%',
+          saving_text: 'Tiết kiệm 172.000đ',
+          note: 'Nấu chè, hầm canh',
           freeship: false,
           weight_kg: 2,
           tag: null
@@ -891,22 +891,22 @@
           id: 'sen-3kg',
           label: 'Combo 3kg',
           price: 432000,
-          compare_at: 447000,
-          discount_badge: null,
-          saving_text: 'Tiết kiệm 15.000đ + FREESHIP',
-          note: 'Tiết kiệm 15.000đ + FREESHIP',
+          compare_at: 690000,
+          discount_badge: 'GIẢM 37%',
+          saving_text: 'Tiết kiệm 258.000đ + FREESHIP',
+          note: 'Miễn phí giao hàng',
           freeship: true,
           weight_kg: 3,
-          tag: 'FREESHIP'
+          tag: null
         },
         {
           id: 'sen-5kg',
           label: 'Combo 5kg',
           price: 695000,
-          compare_at: 745000,
-          discount_badge: null,
-          saving_text: 'Tiết kiệm 50.000đ + FREESHIP',
-          note: 'Tiết kiệm 50.000đ + FREESHIP',
+          compare_at: 1150000,
+          discount_badge: 'GIẢM 40%',
+          saving_text: 'Tiết kiệm 455.000đ + FREESHIP',
+          note: 'Giá sỉ tiết kiệm nhất',
           freeship: true,
           weight_kg: 5,
           tag: 'TIẾT KIỆM NHẤT'
@@ -1147,7 +1147,7 @@
         card.onclick = () => selectPackage(pkg.id);
 
         let tagHtml = '';
-        if (pkg.tag) {
+        if (pkg.tag && (!pkg.freeship || pkg.tag !== 'FREESHIP')) {
           tagHtml += `<span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-[#FE2C55] text-white shadow-xs">${pkg.tag}</span>`;
         }
         if (pkg.freeship) {
@@ -1161,7 +1161,7 @@
 
         let discountSnippet = '';
         if (pkg.discount_badge) {
-          discountSnippet = `<span class="text-[10px] font-bold text-white bg-gradient-to-r from-[#FE2C55] to-orange-500 px-1.5 py-0.2 rounded">${pkg.discount_badge}</span>`;
+          discountSnippet = `<span class="text-[10px] font-bold text-white bg-gradient-to-r from-[#FE2C55] to-orange-500 px-1.5 py-0.2 rounded shadow-xs">${pkg.discount_badge}</span>`;
         }
 
         card.innerHTML = `
@@ -1171,19 +1171,24 @@
             }">
               ${isSelected ? '<i class="ph-bold ph-check text-xs"></i>' : ''}
             </div>
-            <div>
+            <div class="min-w-0">
               <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="text-xs font-bold text-stone-900">${pkg.label}</span>
                 ${tagHtml}
-                ${discountSnippet}
               </div>
-              <div class="text-[11px] text-stone-500 mt-0.5">${pkg.saving_text ? `<span class="text-emerald-700 font-semibold">${pkg.saving_text}</span> • ` : ''}${pkg.note || ''}</div>
+              <div class="text-[11px] text-stone-500 mt-0.5 flex items-center gap-1.5 flex-wrap">
+                ${pkg.note ? `<span>${pkg.note}</span>` : ''}
+                ${pkg.saving_text && (!pkg.note || !pkg.note.includes(pkg.saving_text)) ? `<span class="text-emerald-700 font-semibold">• ${pkg.saving_text}</span>` : ''}
+              </div>
             </div>
           </div>
           <div class="text-right flex-shrink-0 ml-2">
-            <div>
+            <div class="flex items-baseline gap-1 justify-end flex-wrap">
               ${compareSnippet}
-              <span class="text-sm font-extrabold ${isSelected ? 'text-[#FE2C55]' : 'text-stone-900'}">${formatVND(pkg.price)}</span>
+              ${discountSnippet}
+            </div>
+            <div class="text-sm font-extrabold ${isSelected ? 'text-[#FE2C55]' : 'text-stone-900'} mt-0.5">
+              ${formatVND(pkg.price)}
             </div>
           </div>
         `;
