@@ -362,6 +362,35 @@
       </p>
     </div>
 
+    <!-- SỰ THẬT VỀ SỨC KHỎE: CẢNH BÁO HẠT BÍ TẨM HÓA CHẤT / PHẨM MÀU -->
+    <section class="mx-4 mb-4 p-3.5 bg-amber-50/70 rounded-2xl border border-amber-200 shadow-xs" aria-label="Sự thật về hạt bí và sức khỏe">
+      <div class="flex items-center gap-2 mb-2 pb-2 border-b border-amber-200/80">
+        <div class="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
+          <i class="ph-fill ph-warning-circle"></i>
+        </div>
+        <div>
+          <h3 class="text-xs font-black text-amber-950 uppercase tracking-tight">SỰ THẬT CÓ THỂ BẠN CHƯA BIẾT:</h3>
+          <p class="text-[10px] text-amber-800 font-semibold">Đừng để món ăn vặt vô tình gây hại cho cả gia đình</p>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-xs text-stone-700">
+        <div class="flex items-start gap-2 bg-white/80 p-2.5 rounded-xl border border-amber-100">
+          <i class="ph-bold ph-x-circle text-rose-500 text-base flex-shrink-0 mt-0.5"></i>
+          <div>
+            <span class="font-bold text-stone-900">Hạt bí trôi nổi trên thị trường:</span> Thường được xông lưu huỳnh chống mốc, tẩy trắng bằng hóa chất hoặc tẩm phẩm màu, muối đường hóa học để át đi vị mốc lép. Ăn nhiều dễ gây nóng cổ, khé họng và tích tụ độc tố.
+          </div>
+        </div>
+
+        <div class="flex items-start gap-2 bg-emerald-50/90 p-2.5 rounded-xl border border-emerald-200">
+          <i class="ph-fill ph-check-circle text-emerald-600 text-base flex-shrink-0 mt-0.5"></i>
+          <div>
+            <span class="font-bold text-emerald-950">Giải pháp từ Nông Sản Mộc:</span> Hạt bí nếp chuẩn giống Việt, <strong>rang củi mộc 100% không tẩm ướp</strong>, giữ nguyên lớp dầu bùi béo tự nhiên giàu <em>Kẽm, Magie &amp; Omega-3 thực vật</em> — cực tốt cho giấc ngủ sâu, tuyến tiền liệt ở nam giới và làn da phụ nữ.
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 9. SHOP COMMITMENTS (4 GRID CARDS 2x2) -->
     <section class="p-4 bg-[#FAFAFA] border-b border-stone-200" aria-label="Cam kết chất lượng">
       <div class="text-center mb-3">
@@ -436,10 +465,10 @@
 
     <!-- 11. BIỂU MẪU ĐẶT HÀNG TRỰC TIẾP (BƯỚC 1: ĐIỀN THÔNG TIN NHẬN HÀNG) -->
     <section id="order-form-section" class="p-4 bg-white pb-32" aria-label="Biểu mẫu đặt hàng">
-      <!-- Chỉ báo Bước 1/2 (Yêu cầu Phần 6) -->
+      <!-- Chỉ báo Đặt hàng Nhanh 1 Bước -->
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-[#FE2C55] text-xs font-bold mb-2.5">
         <span class="w-2 h-2 rounded-full bg-[#FE2C55] animate-pulse"></span>
-        <span>Bước 1/2 — Điền thông tin nhận hàng</span>
+        <span>Điền thông tin — Nhận hàng kiểm tra mới thanh toán</span>
       </div>
 
       <!-- Khối kích thích mua hàng (Urgency & Scarcity) -->
@@ -498,8 +527,8 @@
         </div>
       </div>
 
-      <!-- Input Form (Tối ưu Mobile Phần 6) -->
-      <form id="order-form" onsubmit="handleStep1Submit(event)" novalidate class="space-y-4">
+      <!-- Input Form 1 Bước Thu Gọn -->
+      <form id="order-form" onsubmit="handleOrderSubmit(event)" novalidate class="space-y-4">
         <!-- Họ và tên -->
         <div>
           <label for="input-name" class="block text-sm font-bold text-stone-900 mb-1.5">
@@ -565,11 +594,11 @@
           </p>
         </div>
 
-        <!-- Nút Submit Bước 1: Tiếp tục sang Bước 2 -->
-        <button type="submit" id="step1-submit-btn" class="w-full min-h-[54px] py-4 px-4 rounded-2xl bg-gradient-to-r from-[#FE2C55] via-[#FF0050] to-[#FF3366] text-white font-extrabold text-base tracking-wide shadow-lg cta-glow flex items-center justify-center gap-2 active:scale-[0.99] transition-transform">
-          <i class="ph-bold ph-paper-plane-tilt text-lg"></i>
-          <span id="step1-btn-text">TIẾP TỤC — BƯỚC 2: XÁC NHẬN ĐƠN</span>
-          <div id="step1-btn-spinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+        <!-- Nút Submit Đặt hàng 1 Bước -->
+        <button type="submit" id="order-submit-btn" class="w-full min-h-[54px] py-4 px-4 rounded-2xl bg-gradient-to-r from-[#FE2C55] via-[#FF0050] to-[#FF3366] text-white font-black text-base tracking-wide shadow-lg cta-glow flex items-center justify-center gap-2 active:scale-[0.99] transition-transform">
+          <i class="ph-bold ph-check-circle text-xl"></i>
+          <span id="order-btn-text">ĐẶT HÀNG NGAY — THANH TOÁN KHI NHẬN</span>
+          <div id="order-btn-spinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
         </button>
 
         <p class="text-[11px] text-center text-stone-500">
@@ -674,100 +703,7 @@
       </button>
     </div>
 
-    <!-- ============================================================== -->
-    <!-- 16. BƯỚC 2: MÀN HÌNH KIỂM TRA LẠI & XÁC NHẬN ĐƠN (LUỒNG 2 BƯỚC) -->
-    <!-- ============================================================== -->
-    <div id="step2-screen" class="fixed inset-0 z-50 bg-stone-100 overflow-y-auto hidden">
-      <div class="max-w-md mx-auto min-h-screen bg-white shadow-2xl flex flex-col justify-between pb-36 relative">
-        <!-- Header bước 2 -->
-        <div class="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white p-4 sticky top-0 z-20 shadow-md">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-amber-400 flex items-center gap-1">
-              <i class="ph-fill ph-shield-check text-base"></i> Bước 2/2 — Kiểm tra &amp; xác nhận đơn
-            </span>
-            <span id="step2-order-code" class="font-mono text-xs font-bold bg-white/10 px-2.5 py-0.5 rounded text-stone-200">#NS-000000</span>
-          </div>
-          <h2 class="text-base font-extrabold text-white mt-1">KIỂM TRA LẠI THÔNG TIN ĐƠN HÀNG</h2>
-          <p class="text-xs text-stone-300">Đơn đã lưu tạm. Quý khách vui lòng kiểm tra và bấm Xác nhận để shop gửi hàng.</p>
-        </div>
 
-        <!-- Nội dung thông tin đơn hàng đã điền -->
-        <div class="p-4 space-y-3.5 flex-1">
-          <!-- Hộp nhắc gọi điện thoại -->
-          <div class="p-3.5 bg-rose-50 border border-rose-200 rounded-2xl">
-            <div class="text-[11px] text-stone-500 font-bold uppercase tracking-wide mb-0.5">Số điện thoại nhận hàng:</div>
-            <div id="step2-phone" class="text-2xl font-black text-rose-600 tracking-wider font-mono">0912.345.678</div>
-            <p class="text-[11px] text-rose-800 font-medium mt-1 flex items-center gap-1">
-              <i class="ph-fill ph-phone-call"></i> Shop sẽ gọi vào số này để xác nhận đơn và hẹn giờ giao hàng.
-            </p>
-          </div>
-
-          <!-- Thông tin khách hàng & Địa chỉ -->
-          <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-2.5 text-xs">
-            <div class="flex justify-between items-start border-b border-stone-200/80 pb-2">
-              <span class="text-stone-500 font-medium">Họ và tên:</span>
-              <span id="step2-name" class="font-bold text-stone-900 text-right ml-2 text-sm"></span>
-            </div>
-            <div class="flex justify-between items-start border-b border-stone-200/80 pb-2">
-              <span class="text-stone-500 font-medium">Địa chỉ giao:</span>
-              <span id="step2-address" class="font-semibold text-stone-900 text-right ml-2 max-w-[220px]"></span>
-            </div>
-            <div class="flex justify-between items-start pt-0.5" id="step2-note-row">
-              <span class="text-stone-500 font-medium">Ghi chú:</span>
-              <span id="step2-note" class="text-stone-700 italic text-right ml-2 max-w-[220px]"></span>
-            </div>
-          </div>
-
-          <!-- Chi tiết sản phẩm & 3 DÒNG GIÁ TÁCH BẠCH (Yêu cầu Phần 5) -->
-          <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-2 text-xs">
-            <div class="flex items-center gap-2.5 pb-2.5 border-b border-stone-200">
-              <img src="images/hat-bi-1.jpg" alt="Sản phẩm" class="w-12 h-12 rounded-xl object-cover border border-stone-200">
-              <div>
-                <h4 class="font-bold text-stone-900 text-xs">Hạt Bí Nếp Rang Mộc</h4>
-                <div id="step2-pkg-name" class="font-extrabold text-[#FE2C55] text-xs"></div>
-              </div>
-            </div>
-
-            <!-- TÁCH BẠCH 3 DÒNG: TIỀN HÀNG / PHÍ SHIP / TỔNG COD -->
-            <div class="flex justify-between items-center text-stone-600">
-              <span>Tiền hàng:</span>
-              <span id="step2-subtotal" class="font-bold text-stone-900"></span>
-            </div>
-            <div class="flex justify-between items-center text-stone-600 border-b border-stone-200/80 pb-2">
-              <span>Phí ship:</span>
-              <span id="step2-shipping" class="font-bold text-stone-900"></span>
-            </div>
-
-            <div class="flex justify-between items-baseline pt-1">
-              <div>
-                <div class="font-extrabold text-stone-900 text-sm">Tổng COD:</div>
-                <div class="text-[10px] text-stone-500">Thanh toán tiền mặt khi nhận hàng</div>
-              </div>
-              <div id="step2-total" class="text-3xl font-black text-[#FE2C55]"></div>
-            </div>
-          </div>
-
-          <!-- Thông báo COD an toàn -->
-          <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 flex items-center gap-2 text-xs text-emerald-900">
-            <i class="ph-fill ph-shield-check text-emerald-600 text-lg flex-shrink-0"></i>
-            <span><strong>Kiểm tra hàng trước khi trả tiền</strong> — đúng chuẩn hạt bí rang mộc mẩy chắc mới nhận.</span>
-          </div>
-        </div>
-
-        <!-- THANH NÚT XÁC NHẬN CỐ ĐỊNH Ở ĐÁY BƯỚC 2 -->
-        <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 bg-white/95 backdrop-blur-md border-t border-stone-200 p-3 shadow-2xl space-y-1.5">
-          <button type="button" id="step2-confirm-btn" onclick="handleStep2Confirm()" class="w-full min-h-[56px] py-3.5 px-4 rounded-2xl bg-gradient-to-r from-[#FE2C55] via-[#FF0050] to-[#FF4500] text-white font-black text-base tracking-wider shadow-xl cta-glow flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
-            <i class="ph-bold ph-check-circle text-xl"></i>
-            <span id="step2-btn-text">✓ XÁC NHẬN ĐƠN HÀNG</span>
-            <div id="step2-btn-spinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-          </button>
-          <button type="button" onclick="backToStep1()" class="w-full py-2 text-stone-500 hover:text-stone-800 text-xs font-semibold flex items-center justify-center gap-1 transition-colors">
-            <i class="ph-bold ph-arrow-left"></i>
-            <span>← Sửa lại thông tin</span>
-          </button>
-        </div>
-      </div>
-    </div>
 
     <!-- 17. POPUP MODAL ĐẶT HÀNG THÀNH CÔNG -->
     <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
@@ -1439,10 +1375,9 @@
       const stickyBar = document.getElementById('sticky-bottom-bar');
       const floatingContacts = document.getElementById('floating-contacts');
       const salesPop = document.getElementById('sales-pop');
-      const isStep2Open = !document.getElementById('step2-screen').classList.contains('hidden');
       const isSuccessOpen = !document.getElementById('success-modal').classList.contains('hidden');
 
-      const shouldHide = isFormInView || isInputFocused || isStep2Open || isSuccessOpen;
+      const shouldHide = isFormInView || isInputFocused || isSuccessOpen;
 
       if (stickyBar) {
         if (shouldHide) {
@@ -1537,9 +1472,8 @@
 
       function triggerNextPop() {
         if (isSalesPopSessionClosed || salesPopCount >= MAX_SALES_POPS) return;
-        const isStep2Open = !document.getElementById('step2-screen').classList.contains('hidden');
         const isModalOpen = !document.getElementById('success-modal').classList.contains('hidden');
-        if (isUserTyping || isFormInView || isInputFocused || isStep2Open || isModalOpen) {
+        if (isUserTyping || isFormInView || isInputFocused || isModalOpen) {
           setTimeout(triggerNextPop, 10000);
           return;
         }
@@ -1644,23 +1578,20 @@
     }
 
     /* =================================================================
-       LUỒNG ĐẶT HÀNG 2 BƯỚC:
-       BƯỚC 1: LƯU ĐƠN VỀ GOOGLE FORM & BẮN PIXEL LEAD
+       LUỒNG ĐẶT HÀNG 1 BƯỚC THU GỌN:
+       LƯU ĐƠN TRỰC TIẾP VỀ GOOGLE SHEET (ĐÃ XÁC NHẬN) & BẮN PIXEL PURCHASE
        ================================================================= */
-    let activeOrderId = null;
-    let currentOrderData = null;
-
-    async function handleStep1Submit(e) {
+    async function handleOrderSubmit(e) {
       e.preventDefault();
 
       if (!validateForm()) return;
 
-      const submitBtn = document.getElementById('step1-submit-btn');
-      const btnText = document.getElementById('step1-btn-text');
-      const btnSpinner = document.getElementById('step1-btn-spinner');
+      const submitBtn = document.getElementById('order-submit-btn');
+      const btnText = document.getElementById('order-btn-text');
+      const btnSpinner = document.getElementById('order-btn-spinner');
 
       submitBtn.disabled = true;
-      btnText.textContent = 'ĐANG LƯU ĐƠN HÀNG...';
+      btnText.textContent = 'ĐANG GỬI ĐƠN HÀNG...';
       btnSpinner.classList.remove('hidden');
 
       const nameInput = document.getElementById('input-name');
@@ -1674,27 +1605,12 @@
       const userNote = noteInput.value.trim();
 
       const pkg = PRODUCT_INFO.packages.find(p => p.id === currentPackageId) || PRODUCT_INFO.packages[1];
-      if (!activeOrderId) {
-        activeOrderId = generateOrderId();
-      }
-      const orderId = activeOrderId;
+      const orderId = generateOrderId();
       const qcTag = getUTMTag();
       const shippingFee = getShippingFee(pkg);
       const totalAmount = getTotalAmount(pkg);
       const shipDesc = shippingFee === 0 ? 'Freeship (0đ)' : 'Ship 29k';
-      const fullNote = `[Mã đơn: ${orderId}] [Tiền hàng: ${formatVND(pkg.price)} | ${shipDesc} | Tổng COD: ${formatVND(totalAmount)}] [Chưa xác nhận] ${qcTag ? qcTag + ' ' : ''}${userNote}`.trim();
-
-      currentOrderData = {
-        orderId,
-        fullName,
-        phone,
-        address,
-        userNote,
-        pkg,
-        shippingFee,
-        totalAmount,
-        shipDesc
-      };
+      const fullNote = `[Mã đơn: ${orderId}] [Tiền hàng: ${formatVND(pkg.price)} | ${shipDesc} | Tổng COD: ${formatVND(totalAmount)}] [ĐÃ XÁC NHẬN] ${qcTag ? qcTag + ' ' : ''}${userNote}`.trim();
 
       const formData = new FormData();
       formData.append('entry.1663547434', fullName);
@@ -1703,94 +1619,6 @@
       formData.append('entry.2132536733', PRODUCT_INFO.name);
       formData.append('entry.148933295', `${pkg.label} (${formatVND(pkg.price)} + ${shipDesc})`);
       formData.append('entry.658159699', String(totalAmount));
-      formData.append('entry.1562310325', fullNote);
-      formData.append('entry.1246117709', 'CHƯA XÁC NHẬN');
-
-      const submitUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScp8i2UlZmZIVekpKAk4QldrQNtMuim7O7LH2-_5yyzycDiBA/formResponse';
-
-      try {
-        await fetch(submitUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: formData
-        });
-      } catch (err) {
-        console.error('Lỗi khi lưu đơn bước 1:', err);
-      }
-
-      // BẮN SỰ KIỆN LEAD Ở BƯỚC 1 (LƯU ĐƠN)
-      if (window.fbq) {
-        window.fbq('track', 'Lead');
-      }
-      console.log('✅ Đã bắn sự kiện Lead lên Meta Pixel:', pkg.label, 'Tổng COD:', totalAmount);
-
-      submitBtn.disabled = false;
-      btnText.textContent = 'TIẾP TỤC — BƯỚC 2: XÁC NHẬN ĐƠN';
-      btnSpinner.classList.add('hidden');
-
-      // Chuyển sang Bước 2 (Màn hình kiểm tra lại)
-      showStep2Screen(currentOrderData);
-    }
-
-    /* =================================================================
-       BƯỚC 2: HIỂN THỊ MÀN HÌNH KIỂM TRA LẠI & XÁC NHẬN
-       ================================================================= */
-    function showStep2Screen(data) {
-      document.getElementById('step2-order-code').textContent = data.orderId;
-      document.getElementById('step2-name').textContent = data.fullName;
-      document.getElementById('step2-phone').textContent = data.phone;
-      document.getElementById('step2-address').textContent = data.address;
-
-      const noteRow = document.getElementById('step2-note-row');
-      if (data.userNote) {
-        document.getElementById('step2-note').textContent = data.userNote;
-        noteRow.classList.remove('hidden');
-      } else {
-        noteRow.classList.add('hidden');
-      }
-
-      document.getElementById('step2-pkg-name').textContent = `${data.pkg.label} ${data.pkg.freeship ? '(FREESHIP)' : ''}`;
-      // Tách bạch 3 dòng ở Bước 2: Tiền hàng / Phí ship / Tổng COD (Phần 5)
-      document.getElementById('step2-subtotal').textContent = formatVND(data.pkg.price);
-      document.getElementById('step2-shipping').textContent = data.shippingFee === 0 ? 'MIỄN PHÍ (FREESHIP)' : formatVND(data.shippingFee);
-      document.getElementById('step2-total').textContent = formatVND(data.totalAmount);
-
-      updateBottomStickyVisibility();
-
-      const step2El = document.getElementById('step2-screen');
-      step2El.classList.remove('hidden');
-      step2El.scrollTop = 0;
-    }
-
-    function backToStep1() {
-      document.getElementById('step2-screen').classList.add('hidden');
-      updateBottomStickyVisibility();
-      document.getElementById('order-form-section').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    /* =================================================================
-       BƯỚC 2: XÁC NHẬN ĐƠN HÀNG — GỬI ĐƠN & BẮN SỰ KIỆN PURCHASE
-       ================================================================= */
-    async function handleStep2Confirm() {
-      const confirmBtn = document.getElementById('step2-confirm-btn');
-      const btnText = document.getElementById('step2-btn-text');
-      const btnSpinner = document.getElementById('step2-btn-spinner');
-
-      confirmBtn.disabled = true;
-      btnText.textContent = 'ĐANG XÁC NHẬN...';
-      btnSpinner.classList.remove('hidden');
-
-      const data = currentOrderData;
-      const qcTag = getUTMTag();
-      const fullNote = `[Mã đơn: ${data.orderId}] [Tiền hàng: ${formatVND(data.pkg.price)} | ${data.shipDesc} | Tổng COD: ${formatVND(data.totalAmount)}] [ĐÃ XÁC NHẬN] ${qcTag ? qcTag + ' ' : ''}${data.userNote}`.trim();
-
-      const formData = new FormData();
-      formData.append('entry.1663547434', data.fullName);
-      formData.append('entry.1923907202', data.phone);
-      formData.append('entry.1275212180', data.address);
-      formData.append('entry.2132536733', PRODUCT_INFO.name);
-      formData.append('entry.148933295', `${data.pkg.label} (${formatVND(data.pkg.price)} + ${data.shipDesc})`);
-      formData.append('entry.658159699', String(data.totalAmount));
       formData.append('entry.1562310325', fullNote);
       formData.append('entry.1246117709', 'ĐÃ XÁC NHẬN');
 
@@ -1803,42 +1631,40 @@
           body: formData
         });
       } catch (err) {
-        console.error('Lỗi khi gửi xác nhận bước 2:', err);
+        console.error('Lỗi khi gửi đơn hàng:', err);
       }
 
-      // BẮN SỰ KIỆN PURCHASE CHUẨN TẠI BƯỚC XÁC NHẬN
+      // BẮN SỰ KIỆN PURCHASE CHUẨN LÊN META PIXEL
       if (window.fbq) {
         window.fbq('track', 'Purchase', {
-          value: data.totalAmount,
+          value: totalAmount,
           currency: 'VND',
-          content_name: `${PRODUCT_INFO.name} — ${data.pkg.label}`,
+          content_name: `${PRODUCT_INFO.name} — ${pkg.label}`,
           content_type: 'product',
           num_items: 1
         });
       }
-      console.log('✅ Đã bắn sự kiện Purchase lên Meta Pixel:', data.pkg.label, 'Tổng COD:', data.totalAmount);
+      console.log('✅ Đã bắn sự kiện Purchase lên Meta Pixel:', pkg.label, 'Tổng COD:', totalAmount);
 
       // Xóa nháp sau khi đã gửi đơn thành công
       localStorage.removeItem(DRAFT_KEY);
 
-      // Chuyển sang Popup Modal Thành Công
-      document.getElementById('step2-screen').classList.add('hidden');
-      document.getElementById('modal-order-id').textContent = data.orderId;
-      document.getElementById('modal-name').textContent = data.fullName;
-      document.getElementById('modal-phone').textContent = data.phone;
-      document.getElementById('modal-package').textContent = data.pkg.label;
-      document.getElementById('modal-subtotal').textContent = formatVND(data.pkg.price);
-      document.getElementById('modal-shipping').textContent = data.shippingFee === 0 ? 'Miễn phí (FREESHIP)' : formatVND(data.shippingFee);
-      document.getElementById('modal-total').textContent = formatVND(data.totalAmount);
+      // Hiển thị Popup Modal Thành Công
+      document.getElementById('modal-order-id').textContent = orderId;
+      document.getElementById('modal-name').textContent = fullName;
+      document.getElementById('modal-phone').textContent = phone;
+      document.getElementById('modal-package').textContent = pkg.label;
+      document.getElementById('modal-subtotal').textContent = formatVND(pkg.price);
+      document.getElementById('modal-shipping').textContent = shippingFee === 0 ? 'Miễn phí (FREESHIP)' : formatVND(shippingFee);
+      document.getElementById('modal-total').textContent = formatVND(totalAmount);
       document.getElementById('success-modal').classList.remove('hidden');
+      updateBottomStickyVisibility();
 
-      confirmBtn.disabled = false;
-      btnText.textContent = '✓ XÁC NHẬN ĐƠN HÀNG';
+      submitBtn.disabled = false;
+      btnText.textContent = 'ĐẶT HÀNG NGAY — THANH TOÁN KHI NHẬN';
       btnSpinner.classList.add('hidden');
 
       document.getElementById('order-form').reset();
-      activeOrderId = null;
-      currentOrderData = null;
     }
 
     function closeSuccessModal() {
